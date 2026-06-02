@@ -2,548 +2,1417 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Ivy Africa | National Education & Technology Enterprise</title>
-    <!-- Preconnect & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Swiper JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivy Africa | Workforce Infrastructure. National Scale.</title>
+    <meta name="description" content="Government-trusted, B-BBEE Level 1 workforce transformation. Infrastructure systems for Africa's future.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- GSAP animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+:root {
+    --background: #0A0A0F;
+    --surface: #111318;
+    --surface-elevated: #1A1D24;
+    --primary: #00D4AA;
+    --primary-glow: rgba(0,212,170,0.2);
+    --accent-cyan: #00B8D9;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A5B5;
+    --border-subtle: rgba(255,255,255,0.08);
+}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FFFFFF;
-            color: #111111;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        :root {
-            --black: #000000;
-            --white: #FFFFFF;
-            --grey-50: #F9F9F9;
-            --grey-100: #F2F2F2;
-            --grey-200: #E8E8E8;
-            --grey-300: #D4D4D4;
-            --grey-500: #737373;
-            --grey-700: #404040;
-            --grey-900: #1A1A1A;
-            --border-light: #EAEAEA;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.03);
-            --shadow-lg: 0 24px 40px -12px rgba(0,0,0,0.08);
-        }
+body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1rem 0;
+}
 
-        /* Typography */
-        h1, h2, h3 {
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        h1 { font-size: 3.5rem; line-height: 1.2; }
-        h2 { font-size: 2rem; margin-bottom: 1rem; }
-        h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-        .section-sub {
-            color: var(--grey-700);
-            max-width: 680px;
-            margin-bottom: 3rem;
-            font-size: 1rem;
-        }
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
 
-        /* Header & Navigation */
-        .site-header {
-            background: var(--white);
-            border-bottom: 1px solid var(--border-light);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(4px);
-        }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 0;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-img {
-            height: 52px;
-            width: auto;
-            object-fit: contain;
-        }
-        .logo-text {
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.3px;
-            border-left: 2px solid var(--grey-300);
-            padding-left: 14px;
-        }
-        .logo-text span {
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: var(--grey-500);
-            display: block;
-        }
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
 
-        /* Mega Menu */
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-        .nav-item {
-            position: relative;
-        }
-        .nav-link {
-            font-weight: 500;
-            font-size: 0.9rem;
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-            color: var(--grey-700);
-            transition: color 0.2s;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: var(--black);
-        }
-        .mega-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.2s ease;
-            z-index: 100;
-            min-width: 680px;
-            border: 1px solid var(--border-light);
-            padding: 28px;
-            background: white;
-        }
-        .nav-item:hover .mega-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(4px);
-        }
-        .mega-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .mega-col h4 {
-            font-weight: 700;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            border-bottom: 1px solid var(--grey-200);
-            padding-bottom: 6px;
-        }
-        .mega-col a {
-            display: block;
-            font-size: 0.85rem;
-            padding: 6px 0;
-            color: var(--grey-700);
-            text-decoration: none;
-        }
-        .mega-col a:hover { color: var(--black); }
+.nav-links a:hover {
+    color: var(--primary);
+}
 
-        .cta-btn {
-            background: var(--black);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-        .cta-btn-outline {
-            background: transparent;
-            border: 1px solid var(--grey-500);
-            color: var(--black);
-        }
+.nav-cta {
+    padding: 0.5rem 1rem !important;
+    background: var(--primary);
+    color: var(--background) !important;
+    border-radius: 4px;
+    font-weight: 600;
+}
 
-        /* Hero */
-        .hero {
-            padding: 72px 0 64px;
-            background: var(--white);
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 56px;
-            align-items: center;
-        }
-        .hero-badge {
-            background: var(--grey-100);
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 24px;
-        }
-        .trust-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            margin-top: 32px;
-        }
-        .hero-image img {
-            width: 100%;
-            border-radius: 24px;
-            object-fit: cover;
-            box-shadow: var(--shadow-md);
-        }
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 60px;
+}
 
-        /* Partner Carousel */
-        .partner-section {
-            padding: 64px 0;
-            background: var(--grey-50);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-        }
-        .swiper-slide {
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid var(--border-light);
-            min-height: 110px;
-        }
-        .partner-logo {
-            max-width: 140px;
-            max-height: 60px;
-            filter: none;
-            object-fit: contain;
-        }
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 
-        /* Cards & Grids */
-        .industry-grid, .offering-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
-            margin: 32px 0;
-        }
-        .card {
-            background: var(--white);
-            border: 1px solid var(--border-light);
-            border-radius: 24px;
-            padding: 28px;
-            transition: all 0.2s;
-        }
-        .card i {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        .price {
-            font-weight: 800;
-            font-size: 1.5rem;
-            margin: 12px 0;
-        }
-        .btn-sm {
-            background: var(--black);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 12px;
-            border: none;
-            cursor: pointer;
-        }
+#grid-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 
-        /* Enquiry Form */
-        .enquiry-section {
-            padding: 80px 0;
-            background: var(--white);
-        }
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            background: var(--grey-50);
-            border-radius: 32px;
-            padding: 48px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid var(--grey-300);
-            border-radius: 16px;
-            font-family: inherit;
-            margin-top: 6px;
-        }
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+}
 
-        footer {
-            background: var(--black);
-            color: #ccc;
-            padding: 56px 0 32px;
-        }
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #00D4AA, transparent);
+    top: 10%;
+    right: 5%;
+    animation: float-orb 20s ease-in-out infinite;
+}
 
-        @media (max-width: 900px) {
-            .hero-grid, .form-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2rem; }
-            .mega-menu { display: none; } /* fallback, but hover works on desktop */
-            .nav-links { gap: 12px; flex-wrap: wrap; }
-        }
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #00B8D9, transparent);
+    bottom: 10%;
+    left: 5%;
+    animation: float-orb 25s ease-in-out infinite reverse;
+}
+
+@keyframes float-orb {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -30px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 50px;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
+}
+
+.fade-up-anim {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-headline {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-headline .accent {
+    color: var(--primary);
+    display: block;
+}
+
+.hero-subheading {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease-out;
+    border: 1px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--background);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.2);
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(0, 212, 170, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 212, 170, 0.1);
+    transform: scale(1.02);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+.btn-outline:hover {
+    background: rgba(0, 212, 170, 0.1);
+}
+
+.btn.large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.trust-row {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.trust-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.logo-grid {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.partner-logo {
+    padding: 0.5rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.partner-logo:hover {
+    color: var(--primary);
+}
+
+.metrics-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.metric {
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.metric-divider {
+    height: 3rem;
+    width: 1px;
+    background: var(--border-subtle);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.scroll-arrow {
+    width: 2px;
+    height: 20px;
+    background: var(--primary);
+    display: block;
+    margin: 0 auto;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(10px); }
+    60% { transform: translateY(5px); }
+}
+
+/* System Section */
+.system-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.system-stack {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.system-layer {
+    padding: 2rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.system-layer:hover {
+    transform: scale(1.02);
+    border-color: var(--primary);
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.layer-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    opacity: 0.3;
+    margin-bottom: 1rem;
+}
+
+.layer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.layer-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.layer-details {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.layer-details ul {
+    list-style: none;
+}
+
+.layer-details li {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    padding-left: 1rem;
+}
+
+.layer-details li:before {
+    content: "→ ";
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+.layer-details.hidden {
+    display: none;
+}
+
+/* Sector Section */
+.sector-section {
+    padding: 6rem 2rem;
+    background: var(--surface);
+}
+
+.sector-section h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sector-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.sector-tab {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.sector-tab.active,
+.sector-tab:hover {
+    background: var(--primary);
+    color: var(--background);
+    border-color: var(--primary);
+}
+
+.sector-content {
+    position: relative;
+}
+
+.sector-panel {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.sector-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.sector-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .sector-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sector-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.challenge-intro {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.solution-stat {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--surface-elevated);
+    border-left: 3px solid var(--primary);
+    border-radius: 4px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.featured-case {
+    padding: 2rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+}
+
+.featured-case h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.case-metric {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.case-quote {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Outcomes Section */
+.outcomes-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.outcomes-section h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.outcomes-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+@media (max-width: 768px) {
+    .outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.outcome-card {
+    padding: 2.5rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.outcome-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 40px rgba(0, 212, 170, 0.15);
+}
+
+.outcome-client {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.outcome-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.metric-primary {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.metric-secondary {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.outcome-quote {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.outcome-visual {
+    height: 150px;
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.1), rgba(0, 184, 217, 0.05));
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.outcome-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
+}
+
+.outcome-link:hover {
+    gap: 1rem;
+}
+
+/* Trust Section */
+.trust-section {
+    padding: 6rem 2rem;
+    background: var(--surface);
+}
+
+.trust-section h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.partner-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.partner-item {
+    padding: 2rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.partner-item:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.trust-credentials {
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.trust-credentials strong {
+    color: var(--primary);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 6rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.contact-section > p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+    background: var(--surface);
+    padding: 3rem 2rem 2rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--primary);
+}
+
+.footer-col li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero {
+        margin-top: 80px;
+    }
+
+    .metrics-row {
+        gap: 1rem;
+    }
+
+    .metric-divider {
+        display: none;
+    }
+
+    .system-stack {
+        grid-template-columns: 1fr;
+    }
+
+    .sector-tabs {
+        gap: 0.5rem;
+    }
+
+    .sector-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partner-wall {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-ctas {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-ctas .btn {
+        width: 100%;
+    }
+}
+
+.counter {
+    font-variant-numeric: tabular-nums;
+}
     </style>
 </head>
 <body>
-
-<header class="site-header">
-    <div class="container header-inner">
-        <div class="logo-area">
-            <img src="https://placehold.co/400x120?text=Ivy+Africa" alt="Ivy Africa Logo" class="logo-img" onerror="this.style.display='none'">
-            <div class="logo-text">IVY AFRICA<br><span>Education + Technology Enterprise</span></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Ivy Africa</a>
+            <ul class="nav-links">
+                <li><a href="#system">Solutions</a></li>
+                <li><a href="#sectors">Sectors</a></li>
+                <li><a href="#outcomes">Impact</a></li>
+                <li><a href="#contact" class="nav-cta">Start Conversation</a></li>
+            </ul>
         </div>
-        <div class="nav-links">
-            <div class="nav-item">
-                <div class="nav-link">Partners <i class="fas fa-chevron-down"></i></div>
-                <div class="mega-menu">
-                    <div class="mega-grid">
-                        <div class="mega-col"><h4>Hardware OEMs</h4><a href="#">Dell Technologies</a><a href="#">Huawei</a><a href="#">Apple</a><a href="#">IBM</a><a href="#">AMD</a><a href="#">APC Schneider</a></div>
-                        <div class="mega-col"><h4>Software & Security</h4><a href="#">Microsoft</a><a href="#">Cisco</a><a href="#">Trend Micro</a><a href="#">Veeam</a><a href="#">Cohesity</a></div>
-                        <div class="mega-col"><h4>Certification Bodies</h4><a href="#">PECB</a><a href="#">CompTIA</a><a href="#">AWS Academy</a><a href="#">Cisco Academy</a><a href="#">Microsoft Learn</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="nav-item">
-                <div class="nav-link">Industries <i class="fas fa-chevron-down"></i></div>
-                <div class="mega-menu">
-                    <div class="mega-grid">
-                        <div class="mega-col"><a href="#">Finance & Banking</a><a href="#">Mining & Resources</a><a href="#">Retail & FMCG</a></div>
-                        <div class="mega-col"><a href="#">Healthcare & Pharma</a><a href="#">Manufacturing</a><a href="#">Logistics & Transport</a></div>
-                        <div class="mega-col"><a href="#">Education & Training</a><a href="#">Energy & Utilities</a><a href="#">Government</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="nav-item"><div class="nav-link">Training & Certifications</div></div>
-            <div class="nav-item"><div class="nav-link">Hardware & Infrastructure</div></div>
-            <div class="nav-item"><div class="nav-link">Supply & Logistics</div></div>
-            <a href="#enquiry" class="cta-btn">Get Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </div>
-</header>
+    </nav>
 
-<main>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <div class="hero-badge">100% Black Youth Owned · Level 1 B-BBEE · CSD MAAA0862915</div>
-                <h1>National Education &<br>Technology Enterprise</h1>
-                <p style="font-size: 1.1rem; color: var(--grey-700); margin: 24px 0;">Partnering with Dell, Huawei, Apple, IBM, Microsoft, Cisco & leading certification bodies. We deliver enterprise hardware, global certifications, digital learning & bulk supply across Africa.</p>
-                <div class="trust-badges">
-                    <span><i class="fas fa-check-circle"></i> PECB Gold Partner</span>
-                    <span><i class="fas fa-check-circle"></i> Microsoft Solutions Partner</span>
-                    <span><i class="fas fa-check-circle"></i> Cisco Academy Support</span>
-                    <span><i class="fas fa-check-circle"></i> 10+ Years Track Record</span>
+        <div class="hero-background">
+            <canvas id="grid-canvas"></canvas>
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="badge fade-up-anim" style="animation-delay: 0s;">
+                Government-Ready · B-BBEE Level 1 · CSD Registered
+            </div>
+
+            <h1 class="hero-headline fade-up-anim" style="animation-delay: 0.1s;">
+                Building the infrastructure
+                <span class="accent">for Africa's future workforce</span>
+            </h1>
+
+            <p class="hero-subheading fade-up-anim" style="animation-delay: 0.2s;">
+                Skills intelligence · Digital transformation · National capability systems
+                <br>
+                Partnering with governments, enterprises, and institutions across South Africa
+            </p>
+
+            <div class="cta-group fade-up-anim" style="animation-delay: 0.3s;">
+                <a href="#system" class="btn btn-primary">Explore Solutions →</a>
+                <a href="#outcomes" class="btn btn-secondary">View Impact ←</a>
+            </div>
+
+            <div class="trust-row fade-up-anim" style="animation-delay: 0.4s;">
+                <div class="trust-label">Authorised & Accredited Partners:</div>
+                <div class="logo-grid">
+                    <div class="partner-logo">Dell</div>
+                    <div class="partner-logo">HP</div>
+                    <div class="partner-logo">Lenovo</div>
+                    <div class="partner-logo">Cisco</div>
+                    <div class="partner-logo">CompTIA</div>
+                    <div class="partner-logo">ISACA</div>
+                    <div class="partner-logo">PECB</div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format" alt="Diverse enterprise team in modern boardroom">
-            </div>
-        </div>
-    </section>
 
-    <!-- Partner Carousel (Strategic Asset) -->
-    <section class="partner-section">
-        <div class="container">
-            <h2 class="section-title">Our Enterprise Partner Ecosystem</h2>
-            <div class="section-sub">Authorized relationships with global technology leaders — evidence of our national capability.</div>
-            <div class="swiper partnerSwiper">
-                <div class="swiper-wrapper" id="partnerCarousel">
-                    <!-- dynamically filled but inline for speed -->
+            <div class="metrics-row fade-up-anim" style="animation-delay: 0.5s;">
+                <div class="metric">
+                    <div class="metric-value counter" data-target="2016">2016</div>
+                    <div class="metric-label">Founded</div>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industries We Serve -->
-    <section style="padding: 72px 0;">
-        <div class="container">
-            <h2 class="section-title">Industries We Serve</h2>
-            <div class="section-sub">Tailored hardware, training & supply solutions for every sector — B2B & B2C ready.</div>
-            <div class="industry-grid">
-                <div class="card"><i class="fas fa-chart-line"></i><h3>Finance & Banking</h3><p>ISO 27001 certification, secure endpoints, data protection (Veeam), server infrastructure.</p></div>
-                <div class="card"><i class="fas fa-hard-hat"></i><h3>Mining & Resources</h3><p>Ruggedized Dell Latitude, Huawei networking, safety PPE, digital literacy programs.</p></div>
-                <div class="card"><i class="fas fa-store"></i><h3>Retail & FMCG</h3><p>POS hardware, office workstations, staff cybersecurity training, CompTIA Security+.</p></div>
-                <div class="card"><i class="fas fa-hospital-user"></i><h3>Healthcare</h3><p>Clinic terminals (IVY-CLINIC), PACS storage, POPIA compliance training, APC power backup.</p></div>
-                <div class="card"><i class="fas fa-chalkboard-user"></i><h3>Education</h3><p>Computer labs (IVY-COMPUTE), LMS platform, teacher digital skills, Cisco networking.</p></div>
-                <div class="card"><i class="fas fa-charging-station"></i><h3>Energy & Utilities</h3><p>SCADA security, server cores, industrial workwear, ISO 22301 business continuity.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Training & Certification Catalogue (B2C + B2B) -->
-    <section style="background: var(--grey-50); padding: 72px 0;">
-        <div class="container">
-            <h2 class="section-title">Global Certifications & Training Programmes</h2>
-            <div class="section-sub">Transparent pricing — individual enrollment or corporate cohorts. Exam vouchers available.</div>
-            <div class="offering-grid" id="programsGrid">
-                <!-- JS will populate 12+ programs with pricing -->
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <button class="cta-btn" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">Request Full Catalogue & Group Pricing →</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hardware & Infrastructure Showcase -->
-    <section style="padding: 72px 0;">
-        <div class="container">
-            <h2 class="section-title">Enterprise Hardware & Deployment</h2>
-            <div class="section-sub">Authorized Dell, Huawei, Apple, IBM supply chain — with staging, imaging & asset tracking.</div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 24px;">
-                <div class="card"><i class="fas fa-desktop"></i><h3>IVY-COMPUTE-LAB-NODE</h3><p>Dell OptiPlex i5/i7, 16GB RAM, 512GB SSD, Win11 Pro.</p><div class="price">From R12,500</div><button class="btn-sm">Request Quote</button></div>
-                <div class="card"><i class="fas fa-laptop"></i><h3>IVY-MOBILITY-LEARNER</h3><p>Ruggedized 11-14" notebook, drop-tested, rural-ready.</p><div class="price">From R9,800</div><button class="btn-sm">Request Quote</button></div>
-                <div class="card"><i class="fas fa-server"></i><h3>IVY-SERVER-CORE-RACK</h3><p>Dell PowerEdge, RAID, hot-swap, on-prem backbone.</p><div class="price">Quote based</div><button class="btn-sm">Configure</button></div>
-                <div class="card"><i class="fas fa-shield-alt"></i><h3>Trend Micro Deep Security</h3><p>Endpoint protection, ransomware defense, cloud suite.</p><div class="price">From R450/device/yr</div><button class="btn-sm">Enquire</button></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- B2B + B2C Enquiry Hub -->
-    <section id="enquiry" class="enquiry-section">
-        <div class="container">
-            <div class="form-grid">
-                <div>
-                    <h2 class="section-title" style="margin-bottom: 16px;">Request a quote — B2B or individual</h2>
-                    <p style="margin-bottom: 20px;">Corporate training, hardware bulk, exam vouchers, LMS licensing, or supply chain. Our enterprise team responds within 24h.</p>
-                    <div><i class="fas fa-check"></i> Transparent pricing with volume tiers</div>
-                    <div><i class="fas fa-check"></i> SETA / Skills grant alignment</div>
-                    <div><i class="fas fa-check"></i> National delivery & staging</div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <div class="metric-value counter" data-target="1200">1,200</div>
+                    <div class="metric-label">Govt Transactions</div>
                 </div>
-                <form id="leadForm">
-                    <input type="text" placeholder="Full name" required>
-                    <input type="email" placeholder="Work email" required style="margin-top: 12px;">
-                    <input type="text" placeholder="Organization" style="margin-top: 12px;">
-                    <select style="margin-top: 12px;">
-                        <option>Training & Certification (B2C/B2B)</option>
-                        <option>Enterprise Hardware / Staging</option>
-                        <option>Bulk Supply / Stationery / PPE</option>
-                        <option>LMS Platform / Digital Learning</option>
-                    </select>
-                    <textarea rows="3" placeholder="Programme names or volume..." style="margin-top: 12px;"></textarea>
-                    <button type="submit" class="cta-btn" style="margin-top: 24px; width:100%">Submit RFQ →</button>
-                </form>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <div class="metric-value"><span class="counter" data-target="90">90</span>%</div>
+                    <div class="metric-label">Certification Pass Rate</div>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <div class="metric-value counter" data-target="45">45</div>
+                    <div class="metric-label">Schools Transformed</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- System Section -->
+    <section id="system" class="system-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>A unified system for national capability</h2>
+                <p>Not services. Not courses. An integrated intelligence layer.</p>
+            </div>
+
+            <div class="system-stack">
+                <div class="system-layer" data-layer="1">
+                    <div class="layer-number">01</div>
+                    <h3 class="layer-title">Intelligence</h3>
+                    <p class="layer-desc">Workforce analytics, skills gap mapping, AI diagnostics</p>
+                    <div class="layer-details hidden">
+                        <ul>
+                            <li>Real-time workforce analytics dashboard</li>
+                            <li>Predictive skills gap identification</li>
+                            <li>AI-powered diagnostic assessments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="system-layer" data-layer="2">
+                    <div class="layer-number">02</div>
+                    <h3 class="layer-title">Infrastructure</h3>
+                    <p class="layer-desc">LMS ecosystems, certification pathways, partner integration</p>
+                    <div class="layer-details hidden">
+                        <ul>
+                            <li>Enterprise-grade learning management</li>
+                            <li>Accredited certification frameworks</li>
+                            <li>Vendor ecosystem integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="system-layer" data-layer="3">
+                    <div class="layer-number">03</div>
+                    <h3 class="layer-title">Activation</h3>
+                    <p class="layer-desc">Learnerships, SEF programs, placement pipelines</p>
+                    <div class="layer-details hidden">
+                        <ul>
+                            <li>Government learnership coordination</li>
+                            <li>Skills Education and Training (SET) program management</li>
+                            <li>Employment placement pathways</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="system-layer" data-layer="4">
+                    <div class="layer-number">04</div>
+                    <h3 class="layer-title">Transformation</h3>
+                    <p class="layer-desc">Government digital strategy, enterprise reskilling, AI adoption</p>
+                    <div class="layer-details hidden">
+                        <ul>
+                            <li>Government digital transformation roadmaps</li>
+                            <li>Enterprise-scale workforce reskilling</li>
+                            <li>AI capability adoption and governance</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-</main>
 
-<footer>
-    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
-        <div><strong>Ivy Africa (Pty) Ltd</strong><br>2016/041769/07 | VAT 4910306010<br>B-BBEE Level 1 (135%)<br>CSD: MAAA0862915</div>
-        <div><strong>Contact</strong><br>+27 (0) 12 345 6789<br>procurement@ivyafrica.com<br>Aliwal North, Eastern Cape</div>
-        <div><strong>Accreditations</strong><br>PECB Gold Partner<br>Microsoft Solutions Partner<br>Dell Authorized Reseller<br>Cisco & CompTIA Academy</div>
-    </div>
-    <div class="container" style="margin-top: 40px; border-top: 1px solid #2a2a2a; padding-top: 24px; font-size:0.75rem;">© 2026 Ivy Africa — Education + Technology Enterprise. All rights reserved.</div>
-</footer>
+    <!-- Sector Section -->
+    <section id="sectors" class="sector-section">
+        <div class="container">
+            <h2>Transformation, by sector</h2>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    // Partners list (full color logos - strategic showcase)
-    const partners = [
-        { name: "Dell Technologies", logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_Technologies_logo.svg" },
-        { name: "Huawei", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Huawei_Logo.jpg" },
-        { name: "Apple", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
-        { name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-        { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
-        { name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" },
-        { name: "PECB", logo: "https://upload.wikimedia.org/wikipedia/commons/7/79/PECB_Logo.svg" },
-        { name: "CompTIA", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2b/CompTIA_logo.svg" }
-    ];
-    const carouselContainer = document.getElementById('partnerCarousel');
-    if(carouselContainer) {
-        partners.forEach(p => {
-            let slide = document.createElement('div');
-            slide.className = 'swiper-slide';
-            slide.innerHTML = `<img src="${p.logo}" alt="${p.name}" class="partner-logo" onerror="this.src='https://placehold.co/200x80?text=${p.name}'">`;
-            carouselContainer.appendChild(slide);
-        });
+            <div class="sector-tabs">
+                <button class="sector-tab active" data-sector="government">Government</button>
+                <button class="sector-tab" data-sector="corporate">Corporate</button>
+                <button class="sector-tab" data-sector="education">Education</button>
+                <button class="sector-tab" data-sector="tvet">TVET</button>
+                <button class="sector-tab" data-sector="university">University</button>
+            </div>
+
+            <div class="sector-content">
+                <div class="sector-panel active" data-sector="government">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>Skills shortages + legacy systems + compliance pressure</h3>
+                            <p class="challenge-intro">Government infrastructure demands scale, accountability, and ROI certainty.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">1,200+</div>
+                                <div class="stat-label">Transactions Delivered</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">0</div>
+                                <div class="stat-label">Delays</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View Government Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>Eastern Cape Education Transformation</h4>
+                                <p class="case-metric">247 laptops deployed · 8 labs established · 45 days · 8% under budget</p>
+                                <p class="case-quote">"Professional, compliant, on budget. Exactly what we needed."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sector-panel" data-sector="corporate">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>Talent gap + retention + certification ROI</h3>
+                            <p class="challenge-intro">Enterprises need measurable skills improvement and financial impact.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">34</div>
+                                <div class="stat-label">Employees Certified in 6 Months</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">94%</div>
+                                <div class="stat-label">Pass Rate</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View Corporate Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>Financial Services Upskilling Initiative</h4>
+                                <p class="case-metric">3 promotions directly attributed · R1.2M ROI · 94% certification rate</p>
+                                <p class="case-quote">"Best training investment we've made. Reduced consultant spend by 60%."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sector-panel" data-sector="education">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>CAPS compliance + teacher training + STEM outcomes</h3>
+                            <p class="challenge-intro">Schools need curriculum alignment, educator confidence, and measurable student progress.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">80%</div>
+                                <div class="stat-label">Student Engagement</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">23</div>
+                                <div class="stat-label">Point Improvement (Avg)</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View Education Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>Combined School Coding Bootcamp</h4>
+                                <p class="case-metric">145 students coding in 8 weeks · 2 university placements · 100% completion</p>
+                                <p class="case-quote">"Our students now see tech as a real career path. The hands-on approach changed everything."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sector-panel" data-sector="tvet">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>Work-integrated learning + industry relevance + placement</h3>
+                            <p class="challenge-intro">TVET colleges bridge the gap between theory and real-world employment demand.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">89%</div>
+                                <div class="stat-label">Learner Placement Rate</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Months to Employment (Avg)</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View TVET Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>NCV Engineering Excellence Program</h4>
+                                <p class="case-metric">156 learners certified · 89% industry placement · 45+ employer partnerships</p>
+                                <p class="case-quote">"They arrive job-ready. That's rare in TVET, and it matters."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sector-panel" data-sector="university">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>Industry relevance + graduate employability + research partnerships</h3>
+                            <p class="challenge-intro">Universities demand cutting-edge curriculum and direct employer engagement.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">92%</div>
+                                <div class="stat-label">Graduate Employability</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Months to First Role (Avg)</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View University Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>Computer Science Industry Partnership</h4>
+                                <p class="case-metric">312 graduates certified · 92% first-year placement · 6 internship partners</p>
+                                <p class="case-quote">"The curriculum reflects where the industry is moving. Employers notice immediately."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section id="outcomes" class="outcomes-section">
+        <div class="container">
+            <h2>Real outcomes. At scale.</h2>
+
+            <div class="outcomes-grid">
+                <div class="outcome-card large">
+                    <div class="outcome-client">Eastern Cape Department of Education</div>
+                    <div class="outcome-metric">
+                        <span class="metric-primary">R2.1M</span>
+                        <span class="metric-secondary">45 days · 8% under budget</span>
+                    </div>
+                    <p class="outcome-quote">"Professional, compliant, on budget. Exactly what we needed."</p>
+                    <div class="outcome-visual gov-visual"></div>
+                    <a href="#" class="outcome-link">Read story →</a>
+                </div>
+
+                <div class="outcome-card large">
+                    <div class="outcome-client">Confidential Financial Services Group</div>
+                    <div class="outcome-metric">
+                        <span class="metric-primary">94% pass rate</span>
+                        <span class="metric-secondary">3:1 ROI · 3 promotions</span>
+                    </div>
+                    <p class="outcome-quote">"Best training investment we've made. Reduced consultant spend by 60%."</p>
+                    <div class="outcome-visual corp-visual"></div>
+                    <a href="#" class="outcome-link">Read story →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section id="trust" class="trust-section">
+        <div class="container">
+            <h2>Authorised. Accredited. Verified.</h2>
+
+            <div class="partner-wall">
+                <div class="partner-item">Dell</div>
+                <div class="partner-item">HP</div>
+                <div class="partner-item">Lenovo</div>
+                <div class="partner-item">Cisco</div>
+                <div class="partner-item">CompTIA</div>
+                <div class="partner-item">ISACA</div>
+                <div class="partner-item">PECB</div>
+                <div class="partner-item">ISC²</div>
+                <div class="partner-item">Sophos</div>
+                <div class="partner-item">Adobe</div>
+                <div class="partner-item">Makro</div>
+                <div class="partner-item">Takealot</div>
+            </div>
+
+            <div class="trust-credentials">
+                <p>CSD: <strong>MAAA0862915</strong> · Registration: <strong>2016/041769/07</strong> · CIPC Verified · Tax Compliant · <strong>B-BBEE Level 1</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Ready to build.</h2>
+            <p>Let's talk about your workforce infrastructure needs.</p>
+            <div class="contact-ctas">
+                <a href="mailto:contact@ivyafrica.co.za" class="btn btn-primary large">Start a conversation →</a>
+                <a href="#" class="btn btn-secondary large">Download capability statement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Impact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">Government</a></li>
+                        <li><a href="#">Enterprise</a></li>
+                        <li><a href="#">Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2016–2026 Ivy Africa. B-BBEE Level 1 Enterprise. Government Trusted Partner.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Hero grid animation
+function initHeroAnimations() {
+    const canvas = document.getElementById('grid-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        let offset = 0;
+        function drawGrid() {
+            ctx.fillStyle = 'rgba(0, 212, 170, 0.02)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.strokeStyle = 'rgba(0, 212, 170, 0.1)';
+            ctx.lineWidth = 1;
+
+            for (let x = 0; x < canvas.width; x += 100) {
+                ctx.beginPath();
+                ctx.moveTo(x + offset, 0);
+                ctx.lineTo(x + offset, canvas.height);
+                ctx.stroke();
+            }
+
+            for (let y = 0; y < canvas.height; y += 100) {
+                ctx.beginPath();
+                ctx.moveTo(0, y + offset);
+                ctx.lineTo(canvas.width, y + offset);
+                ctx.stroke();
+            }
+
+            offset = (offset + 1) % 100;
+            requestAnimationFrame(drawGrid);
+        }
+        drawGrid();
     }
-    new Swiper('.partnerSwiper', {
-        slidesPerView: 2,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: { delay: 3500, disableOnInteraction: false },
-        pagination: { el: '.swiper-pagination', clickable: true },
-        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-        breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } }
+}
+
+// Counter animation
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000;
+        const startValue = 0;
+        const startTime = Date.now();
+        
+        function updateCounter() {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const value = Math.floor(startValue + (target - startValue) * progress);
+            counter.textContent = value.toLocaleString();
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        }
+        
+        updateCounter();
     });
+}
 
-    // Training programs with pricing (B2C transparent)
-    const programs = [
-        { name: "CompTIA A+", vendor: "CompTIA", price: "R9,500", group: "R7,800 pp" },
-        { name: "CCNA (Cisco)", vendor: "Cisco", price: "R15,000", group: "R12,500 pp" },
-        { name: "ISO 27001 Lead Implementer", vendor: "PECB", price: "R18,500", group: "R15,000 pp" },
-        { name: "AWS Solutions Architect", vendor: "AWS", price: "R14,000", group: "R11,500 pp" },
-        { name: "Microsoft Azure (AZ-104)", vendor: "Microsoft", price: "R12,500", group: "R10,000 pp" },
-        { name: "CompTIA Security+", vendor: "CompTIA", price: "R10,500", group: "R8,800 pp" },
-        { name: "ISO 22301 BCMS", vendor: "PECB", price: "R17,500", group: "R14,200 pp" },
-        { name: "Cisco CyberOps", vendor: "Cisco", price: "R14,500", group: "R12,000 pp" }
-    ];
-    const grid = document.getElementById('programsGrid');
-    if(grid) {
-        programs.forEach(p => {
-            let card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <h3>${p.name}</h3>
-                <p style="color: var(--grey-500); font-size:0.8rem;">${p.vendor}</p>
-                <div class="price">${p.price} +VAT</div>
-                <p style="font-size:0.75rem;">Group (3-5): ${p.group}</p>
-                <button class="btn-sm" onclick="document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})">Enroll / Quote</button>
-            `;
-            grid.appendChild(card);
+// Sector tabs
+function initSectorTabs() {
+    const tabs = document.querySelectorAll('.sector-tab');
+    const panels = document.querySelectorAll('.sector-panel');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const sector = this.getAttribute('data-sector');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            panels.forEach(panel => {
+                if (panel.getAttribute('data-sector') === sector) {
+                    panel.classList.add('active');
+                } else {
+                    panel.classList.remove('active');
+                }
+            });
         });
-    }
+    });
+}
 
-    // Form submission (demo)
-    const form = document.getElementById('leadForm');
-    if(form) form.addEventListener('submit', (e) => { e.preventDefault(); alert('Thank you — an enterprise specialist will respond within 24 hours with pricing & availability.'); form.reset(); });
-</script>
+// System layers
+function initSystemLayers() {
+    const layers = document.querySelectorAll('.system-layer');
+    
+    layers.forEach(layer => {
+        layer.addEventListener('mouseenter', function() {
+            const details = this.querySelector('.layer-details');
+            if (details) {
+                details.classList.remove('hidden');
+            }
+        });
+
+        layer.addEventListener('mouseleave', function() {
+            const details = this.querySelector('.layer-details');
+            if (details) {
+                details.classList.add('hidden');
+            }
+        });
+    });
+}
+
+// Smooth scroll
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', function() {
+    initHeroAnimations();
+    animateCounters();
+    initSectorTabs();
+    initSystemLayers();
+    initSmoothScroll();
+});
+    </script>
 </body>
 </html>
