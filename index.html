@@ -1,1492 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ivy Africa® | ICT Solutions, Education Technology & Training</title>
-<meta name="description" content="Ivy Africa® — Changing Lives, Two Steps A Time. ICT solutions, education technology, professional training, and branded collateral across South Africa. Headquartered in Aliwal North, Eastern Cape.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Open Sans',sans-serif;background:#fff;color:#1a1a2e;overflow-x:hidden}
-
-:root{
-  --green:#3ab54a;
-  --green-dark:#2a8a37;
-  --green-light:#edf7ef;
-  --navy:#1e3a6e;
-  --navy-light:#e8edf5;
-  --yellow:#f5c518;
-  --orange:#f47c20;
-  --blue:#3b9edd;
-  --white:#ffffff;
-  --off:#f8f9fa;
-  --text:#1a1a2e;
-  --text-mid:#4a4a6a;
-  --text-light:#8888aa;
-  --border:#e4e8f0;
-  --shadow:0 4px 24px rgba(30,58,110,0.08);
-  --shadow-hover:0 12px 40px rgba(30,58,110,0.15);
-}
-
-/* ── PAGES ── */
-.page{display:none;min-height:100vh}
-.page.active{display:block}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  background:#fff;
-  border-bottom:1px solid var(--border);
-  box-shadow:0 2px 12px rgba(30,58,110,0.06);
-  height:72px;display:flex;align-items:center;
-  padding:0 5%;
-}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
-.nav-logo{display:flex;align-items:center;gap:0;cursor:pointer;text-decoration:none}
-.nav-logo img{height:44px;width:auto}
-.nav-menu{display:flex;align-items:center;gap:0;list-style:none}
-.nav-menu li a,.nav-menu li button{
-  display:flex;align-items:center;gap:4px;
-  padding:8px 16px;
-  font-size:14px;font-weight:600;
-  color:var(--text-mid);
-  text-decoration:none;background:none;border:none;cursor:pointer;
-  border-radius:6px;transition:color .2s,background .2s;
-  font-family:'Open Sans',sans-serif;
-}
-.nav-menu li a:hover,.nav-menu li button:hover{color:var(--navy);background:var(--navy-light)}
-.nav-menu li a.active{color:var(--navy)}
-.nav-cta-btn{
-  background:var(--green)!important;
-  color:#fff!important;
-  padding:10px 22px!important;
-  border-radius:6px!important;
-  font-weight:700!important;
-  transition:background .2s,transform .15s!important;
-}
-.nav-cta-btn:hover{background:var(--green-dark)!important;transform:translateY(-1px)!important}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-.nav-hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s;display:block}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 5%;z-index:199;flex-direction:column;gap:4px}
-.mobile-menu.open{display:flex}
-.mobile-menu a,.mobile-menu button{
-  padding:12px 16px;font-size:15px;font-weight:600;
-  color:var(--text-mid);text-decoration:none;background:none;border:none;
-  cursor:pointer;border-radius:6px;font-family:'Open Sans',sans-serif;
-  text-align:left;transition:background .15s;
-}
-.mobile-menu a:hover,.mobile-menu button:hover{background:var(--off);color:var(--navy)}
-
-/* ── HERO ── */
-.hero{
-  padding-top:72px;
-  min-height:100vh;
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:0;
-}
-.hero-left{
-  padding:80px 5% 80px 8%;
-  background:#fff;
-}
-.hero-right{
-  position:relative;
-  height:100vh;
-  overflow:hidden;
-}
-.hero-right img{
-  width:100%;height:100%;object-fit:cover;
-  display:block;
-}
-.hero-right-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(120deg,rgba(30,58,110,0.5) 0%,rgba(58,181,74,0.3) 100%);
-}
-.hero-pill{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--green-light);
-  border:1px solid rgba(58,181,74,0.3);
-  border-radius:100px;
-  padding:6px 16px;
-  font-size:12px;font-weight:700;
-  color:var(--green-dark);
-  letter-spacing:.06em;text-transform:uppercase;
-  margin-bottom:24px;
-}
-.hero-pill span{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block}
-.hero-left h1{
-  font-size:clamp(2rem,3.5vw,3rem);
-  font-weight:800;
-  color:var(--navy);
-  line-height:1.18;
-  margin-bottom:20px;
-}
-.hero-left h1 .accent{color:var(--green)}
-.hero-left p{
-  font-size:1.05rem;color:var(--text-mid);
-  line-height:1.75;font-weight:400;
-  margin-bottom:36px;max-width:480px;
-}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px}
-.btn-green{
-  background:var(--green);color:#fff;
-  padding:14px 28px;border-radius:6px;
-  font-size:15px;font-weight:700;
-  text-decoration:none;border:none;cursor:pointer;
-  font-family:'Open Sans',sans-serif;
-  transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;
-}
-.btn-green:hover{background:var(--green-dark);transform:translateY(-2px)}
-.btn-navy{
-  background:var(--navy);color:#fff;
-  padding:14px 28px;border-radius:6px;
-  font-size:15px;font-weight:700;
-  text-decoration:none;border:none;cursor:pointer;
-  font-family:'Open Sans',sans-serif;
-  transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;
-}
-.btn-navy:hover{background:#162d58;transform:translateY(-2px)}
-.btn-outline-green{
-  background:transparent;color:var(--green);
-  padding:13px 28px;border-radius:6px;
-  font-size:15px;font-weight:700;
-  text-decoration:none;border:2px solid var(--green);cursor:pointer;
-  font-family:'Open Sans',sans-serif;
-  transition:all .2s;display:inline-flex;align-items:center;gap:8px;
-}
-.btn-outline-green:hover{background:var(--green);color:#fff;transform:translateY(-2px)}
-.btn-outline-navy{
-  background:transparent;color:var(--navy);
-  padding:13px 28px;border-radius:6px;
-  font-size:15px;font-weight:700;
-  text-decoration:none;border:2px solid var(--navy);cursor:pointer;
-  font-family:'Open Sans',sans-serif;
-  transition:all .2s;display:inline-flex;align-items:center;gap:8px;
-}
-.btn-outline-navy:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
-.btn-white{
-  background:#fff;color:var(--navy);
-  padding:14px 28px;border-radius:6px;
-  font-size:15px;font-weight:700;
-  text-decoration:none;border:2px solid #fff;cursor:pointer;
-  font-family:'Open Sans',sans-serif;
-  transition:all .2s;display:inline-flex;align-items:center;gap:8px;
-}
-.btn-white:hover{background:transparent;color:#fff;transform:translateY(-2px)}
-.btn-sm{padding:10px 20px!important;font-size:13px!important}
-.hero-trust{
-  display:flex;gap:32px;flex-wrap:wrap;
-}
-.trust-item{display:flex;flex-direction:column}
-.trust-num{font-size:1.6rem;font-weight:800;color:var(--navy)}
-.trust-label{font-size:11px;color:var(--text-light);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
-.trust-divider{width:1px;background:var(--border)}
-
-/* ── SECTION COMMONS ── */
-.section-wrap{padding:80px 8%}
-.section-wrap-sm{padding:56px 8%}
-.section-wrap-narrow{padding:80px 12%}
-.section-tag{
-  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--green);margin-bottom:10px;display:block;
-}
-.section-tag-navy{color:var(--navy)!important}
-h2.section-title{
-  font-size:clamp(1.6rem,3vw,2.2rem);
-  font-weight:800;color:var(--navy);
-  line-height:1.25;margin-bottom:16px;
-}
-h2.section-title-white{color:#fff!important}
-.section-sub{
-  font-size:1rem;color:var(--text-mid);
-  line-height:1.75;max-width:600px;
-  font-weight:400;
-}
-.section-sub-white{color:rgba(255,255,255,.75)!important}
-.section-header{margin-bottom:52px}
-.section-header-center{text-align:center}
-.section-header-center .section-sub{margin:0 auto}
-
-/* ── STRIPE BANNER ── */
-.stripe-banner{
-  background:var(--navy);
-  padding:28px 8%;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:20px;
-}
-.stripe-banner p{color:#fff;font-size:1rem;font-weight:600;max-width:600px;line-height:1.5}
-.stripe-banner p span{color:var(--yellow);font-weight:700}
-
-/* ── LOGO BAR ── */
-.logo-bar{background:var(--off);padding:36px 8%;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.logo-bar-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:28px}
-.logo-bar-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px}
-.brand-chip{
-  background:#fff;border:1px solid var(--border);
-  border-radius:6px;padding:8px 18px;
-  font-size:12px;font-weight:700;color:var(--text-mid);
-  letter-spacing:.04em;text-transform:uppercase;
-}
-.brand-chip.green{background:var(--green-light);border-color:rgba(58,181,74,.3);color:var(--green-dark)}
-.brand-chip.navy{background:var(--navy-light);border-color:rgba(30,58,110,.2);color:var(--navy)}
-
-/* ── SERVICE CARDS ── */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
-.service-card{
-  background:#fff;border:1px solid var(--border);
-  border-radius:12px;overflow:hidden;
-  box-shadow:var(--shadow);
-  transition:transform .25s,box-shadow .25s;
-  display:flex;flex-direction:column;
-}
-.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
-.service-card-img{
-  height:200px;overflow:hidden;position:relative;
-}
-.service-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.service-card:hover .service-card-img img{transform:scale(1.04)}
-.service-card-img-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom,transparent 40%,rgba(30,58,110,0.5));
-}
-.service-card-body{padding:28px;flex:1;display:flex;flex-direction:column}
-.service-card-icon{
-  width:46px;height:46px;border-radius:10px;
-  background:var(--green-light);
-  display:flex;align-items:center;justify-content:center;
-  font-size:20px;margin-bottom:16px;
-}
-.service-card-body h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px}
-.service-card-body p{font-size:14px;color:var(--text-mid);line-height:1.7;font-weight:400;flex:1}
-.service-card-footer{
-  padding:16px 28px;
-  border-top:1px solid var(--border);
-  background:var(--off);
-  display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between;
-}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px}
-.svc-tag{
-  background:#fff;border:1px solid var(--border);
-  border-radius:4px;padding:3px 10px;
-  font-size:11px;font-weight:700;color:var(--text-mid);
-  letter-spacing:.04em;text-transform:uppercase;
-}
-.learn-link{
-  font-size:13px;font-weight:700;color:var(--green);
-  text-decoration:none;display:flex;align-items:center;gap:4px;
-  transition:color .2s;
-}
-.learn-link:hover{color:var(--green-dark)}
-
-/* ── ABOUT SPLIT ── */
-.about-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about-img{border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-.about-img img{width:100%;height:440px;object-fit:cover;display:block}
-.about-text .section-sub{margin-bottom:24px}
-.value-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:28px}
-.value-item{display:flex;gap:14px;align-items:flex-start}
-.value-check{
-  width:26px;height:26px;min-width:26px;
-  background:var(--green-light);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;margin-top:1px;
-}
-.value-item h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px}
-.value-item p{font-size:13px;color:var(--text-mid);line-height:1.6;font-weight:400}
-
-/* ── STAT BAND ── */
-.stat-band{
-  background:var(--navy);
-  padding:64px 8%;
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:40px;
-}
-.stat-item{text-align:center}
-.stat-item .num{
-  font-size:2.6rem;font-weight:800;
-  color:var(--green);margin-bottom:6px;display:block;
-}
-.stat-item .lbl{
-  font-size:13px;font-weight:600;
-  color:rgba(255,255,255,.7);
-  text-transform:uppercase;letter-spacing:.06em;
-}
-
-/* ── WHY US ── */
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-.why-card{
-  background:#fff;border:1px solid var(--border);
-  border-radius:10px;padding:32px 28px;
-  box-shadow:var(--shadow);
-  transition:transform .2s,box-shadow .2s;
-  border-top:3px solid transparent;
-}
-.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-top-color:var(--green)}
-.why-card-icon{font-size:28px;margin-bottom:16px;display:block}
-.why-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px}
-.why-card p{font-size:13px;color:var(--text-mid);line-height:1.7;font-weight:400}
-
-/* ── SECTORS ── */
-.sectors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.sector-card{
-  border:1px solid var(--border);border-radius:8px;
-  padding:24px 20px;background:#fff;
-  display:flex;flex-direction:column;align-items:flex-start;gap:10px;
-  transition:border-color .2s,transform .2s;
-}
-.sector-card:hover{border-color:var(--green);transform:translateY(-2px)}
-.sector-icon{font-size:22px}
-.sector-card h4{font-size:14px;font-weight:700;color:var(--navy)}
-.sector-card p{font-size:12px;color:var(--text-light);line-height:1.6;font-weight:400}
-
-/* ── TESTIMONIAL ── */
-.testimonial-band{background:var(--green-light);padding:80px 8%}
-.testimonial-inner{max-width:760px;margin:0 auto;text-align:center}
-.testimonial-quote{
-  font-size:1.25rem;font-weight:400;color:var(--navy);
-  line-height:1.7;margin-bottom:28px;font-style:italic;
-}
-.testimonial-author{
-  display:flex;align-items:center;justify-content:center;gap:14px;
-}
-.testimonial-avatar{
-  width:50px;height:50px;border-radius:50%;
-  background:var(--navy);display:flex;align-items:center;justify-content:center;
-  font-size:18px;font-weight:800;color:#fff;
-}
-.testimonial-name{font-size:14px;font-weight:700;color:var(--navy)}
-.testimonial-title{font-size:12px;color:var(--text-light);font-weight:400}
-
-/* ── CTA BAND ── */
-.cta-band{
-  background:var(--green);
-  padding:80px 8%;
-  display:grid;grid-template-columns:1fr auto;
-  gap:48px;align-items:center;
-}
-.cta-band h2{color:#fff;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;margin-bottom:12px}
-.cta-band p{color:rgba(255,255,255,.85);font-size:15px;line-height:1.65}
-.cta-band-btns{display:flex;flex-direction:column;gap:12px;min-width:200px}
-
-/* ── CONTACT FORM ── */
-.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.contact-info{padding-top:8px}
-.contact-info h2{margin-bottom:14px}
-.contact-info .section-sub{margin-bottom:36px}
-.contact-detail{display:flex;gap:14px;margin-bottom:24px;align-items:flex-start}
-.contact-detail-icon{
-  width:42px;height:42px;min-width:42px;
-  background:var(--green-light);border-radius:8px;
-  display:flex;align-items:center;justify-content:center;font-size:18px;
-}
-.contact-detail h5{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:4px}
-.contact-detail p{font-size:14px;color:var(--text-mid);line-height:1.6;font-weight:400}
-.contact-form-box{
-  background:#fff;border:1px solid var(--border);
-  border-radius:12px;padding:40px;
-  box-shadow:var(--shadow);
-}
-.contact-form-box h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:28px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-group{margin-bottom:18px}
-.form-group label{display:block;font-size:12px;font-weight:700;color:var(--text-mid);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
-.form-group input,.form-group textarea,.form-group select{
-  width:100%;border:1.5px solid var(--border);
-  border-radius:6px;padding:11px 14px;
-  font-family:'Open Sans',sans-serif;
-  font-size:14px;color:var(--text);
-  background:#fff;transition:border-color .2s;outline:none;
-}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--green)}
-.form-group textarea{resize:vertical;min-height:110px}
-.form-submit-btn{
-  width:100%;background:var(--green);color:#fff;
-  border:none;border-radius:6px;padding:14px;
-  font-family:'Open Sans',sans-serif;font-size:15px;font-weight:700;
-  cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px;
-}
-.form-submit-btn:hover{background:var(--green-dark)}
-
-/* ── SERVICE DETAIL PAGE ── */
-.service-detail-hero{
-  padding-top:72px;
-  height:440px;position:relative;overflow:hidden;
-}
-.service-detail-hero img{width:100%;height:100%;object-fit:cover}
-.service-detail-hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to right,rgba(30,58,110,.85) 0%,rgba(30,58,110,.4) 100%);
-  display:flex;align-items:flex-end;padding:0 8% 48px;
-}
-.service-detail-hero-text h1{
-  font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;
-  color:#fff;margin-bottom:10px;
-}
-.service-detail-hero-text p{color:rgba(255,255,255,.8);font-size:1rem;max-width:520px}
-.service-body{display:grid;grid-template-columns:2fr 1fr;gap:64px;padding:72px 8%}
-.service-body-content h2{font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:14px}
-.service-body-content p{font-size:15px;color:var(--text-mid);line-height:1.75;margin-bottom:20px}
-.service-body-content ul{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.service-body-content li{display:flex;gap:10px;font-size:14px;color:var(--text-mid);line-height:1.6}
-.service-body-content li::before{content:"✓";color:var(--green);font-weight:700;min-width:18px}
-.service-sidebar{position:sticky;top:88px}
-.sidebar-card{
-  background:#fff;border:1px solid var(--border);
-  border-radius:10px;padding:28px;
-  box-shadow:var(--shadow);margin-bottom:20px;
-}
-.sidebar-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px}
-.sidebar-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.sidebar-card li{font-size:13px;color:var(--text-mid);display:flex;gap:8px;line-height:1.5}
-.sidebar-card li::before{content:"→";color:var(--green);font-weight:700}
-
-/* ── FOOTER ── */
-footer{background:var(--navy);padding:64px 8% 36px}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.footer-brand .brand-tagline{
-  font-size:13px;font-weight:600;color:var(--green);
-  margin-bottom:12px;display:block;
-  font-style:italic;
-}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;font-weight:400;margin-bottom:16px}
-.footer-dots{display:flex;gap:8px;margin-top:8px}
-.footer-dot{width:12px;height:12px;border-radius:50%}
-.footer-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:16px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-col ul li a,.footer-col ul li button{
-  color:rgba(255,255,255,.65);font-size:13px;font-weight:400;
-  text-decoration:none;background:none;border:none;cursor:pointer;
-  font-family:'Open Sans',sans-serif;padding:0;text-align:left;
-  transition:color .2s;
-}
-.footer-col ul li a:hover,.footer-col ul li button:hover{color:#fff}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.1);
-  padding-top:28px;
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:12px;
-}
-.footer-bottom p{font-size:12px;color:rgba(255,255,255,.35)}
-.footer-reg{font-size:11px;color:rgba(255,255,255,.3);margin-top:20px;line-height:1.7}
-.bbee-strip{
-  background:rgba(58,181,74,.15);
-  border:1px solid rgba(58,181,74,.3);
-  border-radius:4px;padding:4px 12px;
-  font-size:11px;font-weight:700;color:var(--green);
-  display:inline-block;margin-top:12px;letter-spacing:.04em;
-}
-
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-right{height:320px}
-  .about-split{grid-template-columns:1fr;gap:40px}
-  .stat-band{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .contact-layout{grid-template-columns:1fr;gap:40px}
-  .cta-band{grid-template-columns:1fr}
-  .service-body{grid-template-columns:1fr;gap:40px}
-  .service-sidebar{position:static}
-}
-@media(max-width:640px){
-  .nav-menu{display:none}
-  .nav-hamburger{display:flex}
-  .section-wrap,.section-wrap-sm,.section-wrap-narrow{padding:56px 5%}
-  .hero-left{padding:60px 5%}
-  .stat-band{grid-template-columns:1fr 1fr;gap:28px;padding:48px 5%}
-  .footer-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .cta-band{padding:56px 5%}
-  .stripe-banner{padding:24px 5%}
-  .logo-bar{padding:32px 5%}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivy Africa | Workforce Infrastructure. National Scale.</title>
+    <meta name="description" content="Government-trusted, B-BBEE Level 1 workforce transformation. Infrastructure systems for Africa's future.">
+    
+    <!-- Fonts: Geist (fallback Inter), JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- GSAP library for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Ivy Africa</a>
+            <ul class="nav-links">
+                <li><a href="#system">Solutions</a></li>
+                <li><a href="#sectors">Sectors</a></li>
+                <li><a href="#outcomes">Impact</a></li>
+                <li><a href="#contact" class="nav-cta">Start Conversation</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="#" onclick="showPage('home')">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ivy_Africa_Logo.png/320px-Ivy_Africa_Logo.png"
-           onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'"
-           alt="Ivy Africa Logo">
-      <!-- Fallback logo -->
-      <span style="display:none;align-items:center;gap:10px">
-        <span style="width:38px;height:38px;background:#3ab54a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#fff;font-style:italic">ivy</span>
-        <span style="font-size:20px;font-weight:800;color:#1e3a6e;letter-spacing:.02em">AFRICA<sup style="font-size:10px">®</sup></span>
-      </span>
-    </a>
-    <ul class="nav-menu">
-      <li><a href="#" class="active" onclick="showPage('home');setActive(this)">Home</a></li>
-      <li><button onclick="showPage('about');setActive(this)">About</button></li>
-      <li><button onclick="showPage('services');setActive(this)">Services</button></li>
-      <li><button onclick="showPage('sectors');setActive(this)">Sectors</button></li>
-      <li><button onclick="showPage('contact');setActive(this)" class="nav-cta-btn">Get a Quote</button></li>
-    </ul>
-    <div class="nav-hamburger" onclick="toggleMobile()">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</nav>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="hero-background">
+            <canvas id="grid-canvas"></canvas>
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="showPage('home');toggleMobile()">Home</a>
-  <button onclick="showPage('about');toggleMobile()">About Us</button>
-  <button onclick="showPage('services');toggleMobile()">Services</button>
-  <button onclick="showPage('sectors');toggleMobile()">Sectors</button>
-  <button onclick="showPage('contact');toggleMobile()" style="color:var(--green)">Get a Quote →</button>
-</div>
+        <div class="hero-content">
+            <!-- Badge -->
+            <div class="badge fade-up-anim" style="animation-delay: 0s;">
+                Government-Ready · B-BBEE Level 1 · CSD Registered
+            </div>
 
-<!-- ═══════════════════════════════ PAGE: HOME ═══════════════════════════════ -->
-<div class="page active" id="page-home">
+            <!-- Headline -->
+            <h1 class="hero-headline fade-up-anim" style="animation-delay: 0.1s;">
+                Building the infrastructure
+                <span class="accent">for Africa's future workforce</span>
+            </h1>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-pill"><span></span>B-BBEE Level 1 · 100% Black-Owned</div>
-      <h1>Empowering South Africa<br>Through <span class="accent">Technology</span><br>& Education</h1>
-      <p>Ivy Africa® delivers ICT infrastructure, education technology, professional training, cybersecurity, and branded solutions — serving government, schools, and enterprise across South Africa from our home in Aliwal North.</p>
-      <div class="hero-actions">
-        <button class="btn-green" onclick="showPage('services')">Explore Our Services ›</button>
-        <button class="btn-outline-navy" onclick="showPage('contact')">Request a Quote</button>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-item">
-          <span class="trust-num">2016</span>
-          <span class="trust-label">Established</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <span class="trust-num">10+</span>
-          <span class="trust-label">Brand Partners</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <span class="trust-num">6</span>
-          <span class="trust-label">Service Pillars</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <span class="trust-num">100%</span>
-          <span class="trust-label">Black-Owned</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80" alt="Technology solutions in South Africa">
-      <div class="hero-right-overlay"></div>
-    </div>
-  </section>
+            <!-- Subheading -->
+            <p class="hero-subheading fade-up-anim" style="animation-delay: 0.2s;">
+                Skills intelligence · Digital transformation · National capability systems
+                <br>
+                Partnering with governments, enterprises, and institutions across South Africa
+            </p>
 
-  <!-- STRIPE BANNER -->
-  <div class="stripe-banner">
-    <p>🏆 Authorised reseller for <span>Dell, HP, Lenovo, Huawei, Sophos, Kaspersky, Adobe, DocuSign</span> & more — competitive pricing, genuine products, SCM-compliant procurement.</p>
-    <button class="btn-white btn-sm" onclick="showPage('contact')">Talk to Us →</button>
-  </div>
+            <!-- CTA Group -->
+            <div class="cta-group fade-up-anim" style="animation-delay: 0.3s;">
+                <a href="#system" class="btn btn-primary">Explore Solutions →</a>
+                <a href="#outcomes" class="btn btn-secondary">View Impact ←</a>
+            </div>
 
-  <!-- BRAND BAR -->
-  <div class="logo-bar">
-    <p class="logo-bar-label">Authorised Reseller & Certification Partner Network</p>
-    <div class="logo-bar-grid">
-      <span class="brand-chip green">Dell</span>
-      <span class="brand-chip green">HP</span>
-      <span class="brand-chip green">Lenovo</span>
-      <span class="brand-chip">Huawei</span>
-      <span class="brand-chip">Acer</span>
-      <span class="brand-chip">Asus</span>
-      <span class="brand-chip">IBM</span>
-      <span class="brand-chip">Adobe</span>
-      <span class="brand-chip">Sophos</span>
-      <span class="brand-chip">Kaspersky</span>
-      <span class="brand-chip">DocuSign</span>
-      <span class="brand-chip navy">ISACA</span>
-      <span class="brand-chip navy">CompTIA</span>
-      <span class="brand-chip navy">PECB</span>
-      <span class="brand-chip navy">ISC²</span>
-      <span class="brand-chip">Pinnacle</span>
-      <span class="brand-chip">First Distribution</span>
-    </div>
-  </div>
+            <!-- Trust Row (Logos) -->
+            <div class="trust-row fade-up-anim" style="animation-delay: 0.4s;">
+                <div class="trust-label">Authorised & Accredited Partners:</div>
+                <div class="logo-grid">
+                    <div class="partner-logo">Dell</div>
+                    <div class="partner-logo">HP</div>
+                    <div class="partner-logo">Lenovo</div>
+                    <div class="partner-logo">Cisco</div>
+                    <div class="partner-logo">CompTIA</div>
+                    <div class="partner-logo">ISACA</div>
+                    <div class="partner-logo">PECB</div>
+                </div>
+            </div>
 
-  <!-- SERVICES PREVIEW -->
-  <section class="section-wrap">
-    <div class="section-header section-header-center">
-      <span class="section-tag">What We Do</span>
-      <h2 class="section-title">Our Core Services</h2>
-      <p class="section-sub">End-to-end technology and training solutions designed for the South African market — from hardware supply to curriculum-aligned EdTech and professional certification.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75" alt="ICT Hardware">
-          <div class="service-card-img-overlay"></div>
+            <!-- Live Metrics Row -->
+            <div class="metrics-row fade-up-anim" style="animation-delay: 0.5s;">
+                <div class="metric">
+                    <div class="metric-value counter" data-target="2016">2016</div>
+                    <div class="metric-label">Founded</div>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <div class="metric-value counter" data-target="1200">1,200</div>
+                    <div class="metric-label">Govt Transactions</div>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <div class="metric-value"><span class="counter" data-target="90">90</span>%</div>
+                    <div class="metric-label">Certification Pass Rate</div>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <div class="metric-value counter" data-target="45">45</div>
+                    <div class="metric-label">Schools Transformed</div>
+                </div>
+            </div>
         </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">🖥️</div>
-          <h3>ICT Hardware & Infrastructure</h3>
-          <p>Supply, delivery, and installation of computers, servers, networking equipment, and peripherals for government, education, and corporate clients — backed by manufacturer warranties and local support.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">Dell</span><span class="svc-tag">HP</span><span class="svc-tag">Lenovo</span></div>
-          <button class="learn-link" onclick="showServiceDetail('ict')">Learn More →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=75" alt="Education Technology">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">📚</div>
-          <h3>Education Technology</h3>
-          <p>CAPS-aligned Coding & Robotics kits for Grades R–12, LMS platforms (Moodle), digital classroom solutions, and curriculum resources that bring 21st-century learning to South African classrooms.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">CAPS</span><span class="svc-tag">STEM</span><span class="svc-tag">Gr R–12</span></div>
-          <button class="learn-link" onclick="showServiceDetail('edtech')">Learn More →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=75" alt="Professional Training">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">🎓</div>
-          <h3>Professional Training & Certification</h3>
-          <p>Accredited programmes in cybersecurity, IT governance, project management, and leadership development through globally recognised bodies — CPD points included where applicable.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">ISACA</span><span class="svc-tag">CompTIA</span><span class="svc-tag">ISC²</span></div>
-          <button class="learn-link" onclick="showServiceDetail('training')">Learn More →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=75" alt="Cybersecurity">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">🔐</div>
-          <h3>Cybersecurity Solutions</h3>
-          <p>Enterprise endpoint protection, firewall management, compliance consulting, and staff awareness training — keeping your data, systems, and reputation secure from evolving cyber threats.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">Sophos</span><span class="svc-tag">Kaspersky</span><span class="svc-tag">IBM</span></div>
-          <button class="learn-link" onclick="showServiceDetail('cyber')">Learn More →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=75" alt="E-Commerce Supply">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">📦</div>
-          <h3>E-Commerce & Direct Supply</h3>
-          <p>ICT accessories, WFH bundles, and education materials available via Makro, Takealot, and direct institutional procurement — fast fulfilment, competitive pricing, B-BBEE receipts provided.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">Makro</span><span class="svc-tag">Takealot</span><span class="svc-tag">B2B</span></div>
-          <button class="learn-link" onclick="showServiceDetail('ecommerce')">Learn More →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="Branded Collateral">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">🎨</div>
-          <h3>Branded Collateral</h3>
-          <p>Corporate branding, uniforms, signage, promotional merchandise, and print materials for businesses, municipalities, and events — designed professionally and produced to specification and deadline.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">Print</span><span class="svc-tag">Apparel</span><span class="svc-tag">Signage</span></div>
-          <button class="learn-link" onclick="showServiceDetail('branding')">Learn More →</button>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:40px">
-      <button class="btn-green" onclick="showPage('services')">View All Services & Pricing ›</button>
-    </div>
-  </section>
 
-  <!-- STAT BAND -->
-  <div class="stat-band">
-    <div class="stat-item"><span class="num">100%</span><span class="lbl">Black-Owned Enterprise</span></div>
-    <div class="stat-item"><span class="num">17+</span><span class="lbl">Authorised Brand Partners</span></div>
-    <div class="stat-item"><span class="num">4</span><span class="lbl">Certification Bodies</span></div>
-    <div class="stat-item"><span class="num">EC</span><span class="lbl">Eastern Cape Rooted</span></div>
-  </div>
-
-  <!-- WHY US -->
-  <section class="section-wrap" style="background:var(--off)">
-    <div class="section-header">
-      <span class="section-tag">Why Ivy Africa</span>
-      <h2 class="section-title">The Ivy Africa Difference</h2>
-      <p class="section-sub">We combine local knowledge, national partnerships, and genuine development intent to deliver solutions that actually work for the South African context.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <span class="why-card-icon">🏆</span>
-        <h3>B-BBEE Level 1 Supplier</h3>
-        <p>Maximum procurement scoring for government and enterprise clients. CSD-registered, CIPC-verified, fully tax-compliant — procurement made seamless.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-icon">🤝</span>
-        <h3>Authorised, Not Just Reselling</h3>
-        <p>Direct reseller agreements with Dell, HP, Lenovo, Sophos, and more via Pinnacle and First Distribution — genuine products, full warranties, competitive pricing.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-icon">📍</span>
-        <h3>Community-Rooted Leadership</h3>
-        <p>Founded and led from Aliwal North — we understand the Joe Gqabi District and Eastern Cape context in ways that Johannesburg firms never will.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-icon">📋</span>
-        <h3>SCM-Compliant Procurement</h3>
-        <p>Experienced in municipal and government tender processes — we understand SCM thresholds, three-quote requirements, and compliance documentation.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-icon">🎓</span>
-        <h3>Qualified Leadership</h3>
-        <p>Led by a Stellenbosch University PGD-qualified managing director with civic leadership experience — professionalism and accountability in every engagement.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-icon">🌱</span>
-        <h3>Development-Driven Mission</h3>
-        <p>Changing Lives, Two Steps at a Time — our commercial success is tied directly to economic development outcomes in the communities we serve.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIAL -->
-  <div class="testimonial-band">
-    <div class="testimonial-inner">
-      <p class="testimonial-quote">"Ivy Africa supplied our school with Coding & Robotics kits that were fully CAPS-aligned and delivered on time. Their team understood our curriculum requirements and went beyond just delivery — they supported our teachers too."</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">PD</div>
-        <div>
-          <p class="testimonial-name">Principal D. Mokoena</p>
-          <p class="testimonial-title">Combined School, Joe Gqabi District</p>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- CTA BAND -->
-  <div class="cta-band">
-    <div>
-      <h2>Ready to Work With Ivy Africa?</h2>
-      <p>Whether you need hardware, training, cybersecurity, or branded materials — we'll respond within one business day with a formal quotation.</p>
-    </div>
-    <div class="cta-band-btns">
-      <button class="btn-white" onclick="showPage('contact')">Request a Quote →</button>
-      <button class="btn-outline-green" style="color:#fff;border-color:rgba(255,255,255,.5)" onclick="showPage('services')">View Services</button>
-    </div>
-  </div>
+    <!-- ===== SYSTEM SECTION ===== -->
+    <section id="system" class="system-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>A unified system for national capability</h2>
+                <p>Not services. Not courses. An integrated intelligence layer.</p>
+            </div>
 
-</div><!-- /page-home -->
+            <!-- 4-Layer Stack -->
+            <div class="system-stack">
+                <div class="system-layer" data-layer="1">
+                    <div class="layer-number">01</div>
+                    <h3 class="layer-title">Intelligence</h3>
+                    <p class="layer-desc">Workforce analytics, skills gap mapping, AI diagnostics</p>
+                    <div class="layer-details hidden">
+                        <ul>
+                            <li>Real-time workforce analytics dashboard</li>
+                            <li>Predictive skills gap identification</li>
+                            <li>AI-powered diagnostic assessments</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- ═══════════════════════════════ PAGE: ABOUT ═══════════════════════════════ -->
-<div class="page" id="page-about">
-  <div style="padding-top:72px;background:var(--navy);padding-bottom:56px;padding-left:8%;padding-right:8%;padding-top:calc(72px + 56px)">
-    <span class="section-tag" style="color:var(--green)">Our Story</span>
-    <h1 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;margin-bottom:14px">About Ivy Africa®</h1>
-    <p style="color:rgba(255,255,255,.7);font-size:1rem;max-width:560px;line-height:1.7">Built in Aliwal North. Growing across South Africa. Changing lives, two steps at a time.</p>
-  </div>
+                <div class="system-layer" data-layer="2">
+                    <div class="layer-number">02</div>
+                    <h3 class="layer-title">Infrastructure</h3>
+                    <p class="layer-desc">LMS ecosystems, certification pathways, partner integration</p>
+                    <div class="layer-details hidden">
+                        <ul>
+                            <li>Enterprise-grade learning management</li>
+                            <li>Accredited certification frameworks</li>
+                            <li>Vendor ecosystem integration</li>
+                        </ul>
+                    </div>
+                </div>
 
-  <section class="section-wrap">
-    <div class="about-split">
-      <div class="about-img">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Ivy Africa team">
-      </div>
-      <div class="about-text">
-        <span class="section-tag">Who We Are</span>
-        <h2 class="section-title">A Technology Enterprise With Purpose</h2>
-        <p class="section-sub">Founded in 2016 and registered as Ivy Africa (Pty) Ltd, we are a 100% Black-owned technology and training company headquartered in Aliwal North, Eastern Cape — the heart of the Joe Gqabi District.</p>
-        <p class="section-sub" style="margin-top:14px">We exist to bridge the digital divide in underserved communities by making quality ICT solutions, education technology, and professional training accessible to institutions and businesses that have historically been overlooked by Gauteng-centric suppliers.</p>
-        <ul class="value-list">
-          <li class="value-item">
-            <div class="value-check">✓</div>
-            <div><h4>Deep Community Roots</h4><p>Present in Aliwal North since the late 1990s — we're not parachuting in. This is home, and we're building for the long term.</p></div>
-          </li>
-          <li class="value-item">
-            <div class="value-check">✓</div>
-            <div><h4>Academic & Professional Credentials</h4><p>Led by a PGD in Leadership Development (Stellenbosch University) with backgrounds in SRC leadership, alumni governance, and enterprise development.</p></div>
-          </li>
-          <li class="value-item">
-            <div class="value-check">✓</div>
-            <div><h4>Registered & Compliant</h4><p>Reg: 2016/041769/07 · CSD: MAAA0862915. Fully tax-compliant, CIPC-verified, and procurement-ready.</p></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+                <div class="system-layer" data-layer="3">
+                    <div class="layer-number">03</div>
+                    <h3 class="layer-title">Activation</h3>
+                    <p class="layer-desc">Learnerships, SEF programs, placement pipelines</p>
+                    <div class="layer-details hidden">
+                        <ul>
+                            <li>Government learnership coordination</li>
+                            <li>Skills Education and Training (SET) program management</li>
+                            <li>Employment placement pathways</li>
+                        </ul>
+                    </div>
+                </div>
 
-  <div class="stat-band">
-    <div class="stat-item"><span class="num">2016</span><span class="lbl">Year Founded</span></div>
-    <div class="stat-item"><span class="num">Level 1</span><span class="lbl">B-BBEE Rating</span></div>
-    <div class="stat-item"><span class="num">6</span><span class="lbl">Service Divisions</span></div>
-    <div class="stat-item"><span class="num">EC</span><span class="lbl">Home Province</span></div>
-  </div>
-
-  <section class="section-wrap" style="background:var(--off)">
-    <div class="section-header">
-      <span class="section-tag">Our Values</span>
-      <h2 class="section-title">What Drives Us</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <span class="why-card-icon">🌍</span>
-        <h3>Ubuntu</h3>
-        <p>We believe business success and community development are not in competition — they are the same journey. Our growth must lift those around us.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-icon">📐</span>
-        <h3>Precision</h3>
-        <p>We do not cut corners. Every quotation, every delivery, every training programme is executed to specification. Our reputation depends on it.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-icon">💡</span>
-        <h3>Innovation</h3>
-        <p>We stay ahead of the technology curve so our clients don't have to — bringing emerging EdTech, cybersecurity, and digital tools to contexts that need them most.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-icon">🔒</span>
-        <h3>Accountability</h3>
-        <p>We are registered, compliant, and transparent. Government and corporate clients can trust that every document, tax invoice, and delivery note is in order.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="cta-band">
-    <div>
-      <h2>Let's Build Something Together</h2>
-      <p>Whether you are a school, municipality, SMME, or corporate — we have the solutions and the credentials to be your trusted technology partner.</p>
-    </div>
-    <div class="cta-band-btns">
-      <button class="btn-white" onclick="showPage('contact')">Get in Touch →</button>
-      <button class="btn-outline-green" style="color:#fff;border-color:rgba(255,255,255,.5)" onclick="showPage('services')">Our Services</button>
-    </div>
-  </div>
-</div><!-- /page-about -->
-
-<!-- ═══════════════════════════════ PAGE: SERVICES ═══════════════════════════════ -->
-<div class="page" id="page-services">
-  <div style="background:var(--navy);padding:calc(72px + 56px) 8% 56px">
-    <span class="section-tag" style="color:var(--green)">What We Offer</span>
-    <h1 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;margin-bottom:14px">Our Services</h1>
-    <p style="color:rgba(255,255,255,.7);font-size:1rem;max-width:560px;line-height:1.7">Six specialised service divisions covering the full spectrum of technology, training, and branded solutions your organisation needs.</p>
-  </div>
-
-  <section class="section-wrap">
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75" alt="ICT Hardware">
-          <div class="service-card-img-overlay"></div>
+                <div class="system-layer" data-layer="4">
+                    <div class="layer-number">04</div>
+                    <h3 class="layer-title">Transformation</h3>
+                    <p class="layer-desc">Government digital strategy, enterprise reskilling, AI adoption</p>
+                    <div class="layer-details hidden">
+                        <ul>
+                            <li>Government digital transformation roadmaps</li>
+                            <li>Enterprise-scale workforce reskilling</li>
+                            <li>AI capability adoption and governance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">🖥️</div>
-          <h3>ICT Hardware & Infrastructure</h3>
-          <p>Full-range supply of desktops, laptops, servers, switches, access points, projectors, and peripherals. We handle procurement, delivery, installation, and warranty management. Authorised reseller for Dell, HP, Lenovo, Huawei, Acer, and Asus via Pinnacle and First Distribution.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">Dell</span><span class="svc-tag">HP</span><span class="svc-tag">Lenovo</span><span class="svc-tag">Huawei</span></div>
-          <button class="learn-link" onclick="showServiceDetail('ict')">Full Details →</button>
-        </div>
-      </div>
+    </section>
 
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=75" alt="Education Technology">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">📚</div>
-          <h3>Education Technology</h3>
-          <p>CAPS-aligned Coding & Robotics kits (Grades R–12), Moodle LMS setup and hosting, teacher training, digital curriculum resources, and STEM laboratory equipment. We supply both the hardware and the pedagogical support to make it work.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">CAPS</span><span class="svc-tag">Moodle</span><span class="svc-tag">STEM</span></div>
-          <button class="learn-link" onclick="showServiceDetail('edtech')">Full Details →</button>
-        </div>
-      </div>
+    <!-- ===== SECTOR SWITCHER ===== -->
+    <section id="sectors" class="sector-section">
+        <div class="container">
+            <h2>Transformation, by sector</h2>
 
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=75" alt="Training">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">🎓</div>
-          <h3>Professional Training & Certification</h3>
-          <p>Accredited certification prep and short courses via ISACA (CISA, CISM), CompTIA (A+, Network+, Security+), PECB (ISO 27001, ISO 9001), and ISC² (CISSP). Management development, leadership, and skills programmes also available for SETA-funded clients.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">ISACA</span><span class="svc-tag">CompTIA</span><span class="svc-tag">PECB</span><span class="svc-tag">ISC²</span></div>
-          <button class="learn-link" onclick="showServiceDetail('training')">Full Details →</button>
-        </div>
-      </div>
+            <!-- Sector Tabs -->
+            <div class="sector-tabs">
+                <button class="sector-tab active" data-sector="government">Government</button>
+                <button class="sector-tab" data-sector="corporate">Corporate</button>
+                <button class="sector-tab" data-sector="education">Education</button>
+                <button class="sector-tab" data-sector="tvet">TVET</button>
+                <button class="sector-tab" data-sector="university">University</button>
+            </div>
 
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=75" alt="Cybersecurity">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">🔐</div>
-          <h3>Cybersecurity Solutions</h3>
-          <p>Endpoint protection, firewall deployment, vulnerability assessments, POPIA compliance consulting, and security awareness training. Authorised to supply and implement Sophos and Kaspersky enterprise solutions. Protecting South African organisations of all sizes.</p>
-        </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">Sophos</span><span class="svc-tag">Kaspersky</span><span class="svc-tag">POPIA</span></div>
-          <button class="learn-link" onclick="showServiceDetail('cyber')">Full Details →</button>
-        </div>
-      </div>
+            <!-- Sector Content -->
+            <div class="sector-content">
+                <!-- Government -->
+                <div class="sector-panel active" data-sector="government">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>Skills shortages + legacy systems + compliance pressure</h3>
+                            <p class="challenge-intro">Government infrastructure demands scale, accountability, and ROI certainty.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">1,200+</div>
+                                <div class="stat-label">Transactions Delivered</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">0</div>
+                                <div class="stat-label">Delays</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View Government Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>Eastern Cape Education Transformation</h4>
+                                <p class="case-metric">247 laptops deployed · 8 labs established · 45 days · 8% under budget</p>
+                                <p class="case-quote">"Professional, compliant, on budget. Exactly what we needed."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=75" alt="E-Commerce">
-          <div class="service-card-img-overlay"></div>
+                <!-- Corporate -->
+                <div class="sector-panel" data-sector="corporate">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>Talent gap + retention + certification ROI</h3>
+                            <p class="challenge-intro">Enterprises need measurable skills improvement and financial impact.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">34</div>
+                                <div class="stat-label">Employees Certified in 6 Months</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">94%</div>
+                                <div class="stat-label">Pass Rate</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View Corporate Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>Financial Services Upskilling Initiative</h4>
+                                <p class="case-metric">3 promotions directly attributed · R1.2M ROI · 94% certification rate</p>
+                                <p class="case-quote">"Best training investment we've made. Reduced consultant spend by 60%."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="sector-panel" data-sector="education">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>CAPS compliance + teacher training + STEM outcomes</h3>
+                            <p class="challenge-intro">Schools need curriculum alignment, educator confidence, and measurable student progress.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">80%</div>
+                                <div class="stat-label">Student Engagement</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">23</div>
+                                <div class="stat-label">Point Improvement (Avg)</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View Education Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>Combined School Coding Bootcamp</h4>
+                                <p class="case-metric">145 students coding in 8 weeks · 2 university placements · 100% completion</p>
+                                <p class="case-quote">"Our students now see tech as a real career path. The hands-on approach changed everything."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TVET -->
+                <div class="sector-panel" data-sector="tvet">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>Work-integrated learning + industry relevance + placement</h3>
+                            <p class="challenge-intro">TVET colleges bridge the gap between theory and real-world employment demand.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">89%</div>
+                                <div class="stat-label">Learner Placement Rate</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Months to Employment (Avg)</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View TVET Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>NCV Engineering Excellence Program</h4>
+                                <p class="case-metric">156 learners certified · 89% industry placement · 45+ employer partnerships</p>
+                                <p class="case-quote">"They arrive job-ready. That's rare in TVET, and it matters."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- University -->
+                <div class="sector-panel" data-sector="university">
+                    <div class="sector-grid">
+                        <div class="sector-text">
+                            <h3>Industry relevance + graduate employability + research partnerships</h3>
+                            <p class="challenge-intro">Universities demand cutting-edge curriculum and direct employer engagement.</p>
+                            <div class="solution-stat">
+                                <div class="stat-number">92%</div>
+                                <div class="stat-label">Graduate Employability</div>
+                            </div>
+                            <div class="solution-stat">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Months to First Role (Avg)</div>
+                            </div>
+                            <a href="#outcomes" class="btn btn-outline">View University Solutions →</a>
+                        </div>
+                        <div class="sector-featured">
+                            <div class="featured-case">
+                                <h4>Computer Science Industry Partnership</h4>
+                                <p class="case-metric">312 graduates certified · 92% first-year placement · 6 internship partners</p>
+                                <p class="case-quote">"The curriculum reflects where the industry is moving. Employers notice immediately."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">📦</div>
-          <h3>E-Commerce & Direct Supply</h3>
-          <p>ICT accessories, WFH productivity bundles, education materials, and load-shedding solutions supplied via Makro Marketplace, Takealot, and direct B2B institutional procurement. Fast fulfilment, competitive pricing, and full B-BBEE documentation provided.</p>
+    </section>
+
+    <!-- ===== OUTCOMES SECTION ===== -->
+    <section id="outcomes" class="outcomes-section">
+        <div class="container">
+            <h2>Real outcomes. At scale.</h2>
+
+            <div class="outcomes-grid">
+                <!-- Outcome 1: Government -->
+                <div class="outcome-card large">
+                    <div class="outcome-client">Eastern Cape Department of Education</div>
+                    <div class="outcome-metric">
+                        <span class="metric-primary">R2.1M</span>
+                        <span class="metric-secondary">45 days · 8% under budget</span>
+                    </div>
+                    <p class="outcome-quote">"Professional, compliant, on budget. Exactly what we needed."</p>
+                    <div class="outcome-visual gov-visual"></div>
+                    <a href="#" class="outcome-link">Read story →</a>
+                </div>
+
+                <!-- Outcome 2: Corporate -->
+                <div class="outcome-card large">
+                    <div class="outcome-client">Confidential Financial Services Group</div>
+                    <div class="outcome-metric">
+                        <span class="metric-primary">94% pass rate</span>
+                        <span class="metric-secondary">3:1 ROI · 3 promotions</span>
+                    </div>
+                    <p class="outcome-quote">"Best training investment we've made. Reduced consultant spend by 60%."</p>
+                    <div class="outcome-visual corp-visual"></div>
+                    <a href="#" class="outcome-link">Read story →</a>
+                </div>
+            </div>
         </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">Makro</span><span class="svc-tag">Takealot</span><span class="svc-tag">B2B Direct</span></div>
-          <button class="learn-link" onclick="showServiceDetail('ecommerce')">Full Details →</button>
+    </section>
+
+    <!-- ===== TRUST SECTION ===== -->
+    <section id="trust" class="trust-section">
+        <div class="container">
+            <h2>Authorised. Accredited. Verified.</h2>
+
+            <!-- Partner Logos -->
+            <div class="partner-wall">
+                <div class="partner-item">Dell</div>
+                <div class="partner-item">HP</div>
+                <div class="partner-item">Lenovo</div>
+                <div class="partner-item">Cisco</div>
+                <div class="partner-item">CompTIA</div>
+                <div class="partner-item">ISACA</div>
+                <div class="partner-item">PECB</div>
+                <div class="partner-item">ISC²</div>
+                <div class="partner-item">Sophos</div>
+                <div class="partner-item">Adobe</div>
+                <div class="partner-item">Makro</div>
+                <div class="partner-item">Takealot</div>
+            </div>
+
+            <!-- Trust Credentials -->
+            <div class="trust-credentials">
+                <p>CSD: <strong>MAAA0862915</strong> · Registration: <strong>2016/041769/07</strong> · CIPC Verified · Tax Compliant · <strong>B-BBEE Level 1</strong></p>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="service-card">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="Branding">
-          <div class="service-card-img-overlay"></div>
+    <!-- ===== FINAL CTA SECTION ===== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Ready to build.</h2>
+            <p>Let's talk about your workforce infrastructure needs.</p>
+            <div class="contact-ctas">
+                <a href="mailto:contact@ivyafrica.co.za" class="btn btn-primary large">Start a conversation →</a>
+                <a href="#" class="btn btn-secondary large">Download capability statement</a>
+            </div>
         </div>
-        <div class="service-card-body">
-          <div class="service-card-icon">🎨</div>
-          <h3>Branded Collateral</h3>
-          <p>Professional branding solutions including corporate uniforms, vehicle branding, banners and signage, branded stationery, and event merchandise. Trusted by Rand Refinery and municipal clients for quality, reliability, and on-time delivery.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Impact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">Government</a></li>
+                        <li><a href="#">Enterprise</a></li>
+                        <li><a href="#">Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2016–2026 Ivy Africa. B-BBEE Level 1 Enterprise. Government Trusted Partner.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
         </div>
-        <div class="service-card-footer">
-          <div class="svc-tags"><span class="svc-tag">Print</span><span class="svc-tag">Apparel</span><span class="svc-tag">Signage</span><span class="svc-tag">Events</span></div>
-          <button class="learn-link" onclick="showServiceDetail('branding')">Full Details →</button>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <div class="cta-band">
-    <div>
-      <h2>Not Sure Which Service You Need?</h2>
-      <p>Talk to us. We'll assess your requirements and recommend the right solution — no obligation, no jargon, just straightforward professional advice.</p>
-    </div>
-    <div class="cta-band-btns">
-      <button class="btn-white" onclick="showPage('contact')">Book a Consultation →</button>
-    </div>
-  </div>
-</div><!-- /page-services -->
-
-<!-- ═══════════════════════════════ PAGE: SERVICE DETAIL ═══════════════════════════════ -->
-<div class="page" id="page-service-detail">
-  <div class="service-detail-hero" id="svcDetailHero">
-    <img id="svcDetailImg" src="" alt="">
-    <div class="service-detail-hero-overlay">
-      <div class="service-detail-hero-text">
-        <h1 id="svcDetailTitle"></h1>
-        <p id="svcDetailSub"></p>
-      </div>
-    </div>
-  </div>
-  <div class="service-body">
-    <div class="service-body-content" id="svcDetailContent"></div>
-    <div class="service-sidebar">
-      <div class="sidebar-card" id="svcDetailSidebar"></div>
-      <div class="sidebar-card">
-        <h4>Ready to Procure?</h4>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
-          <button class="btn-green" onclick="showPage('contact')">Request a Quote →</button>
-          <button class="btn-outline-navy" onclick="showPage('services')" style="font-size:13px;padding:10px 16px">← Back to Services</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════ PAGE: SECTORS ═══════════════════════════════ -->
-<div class="page" id="page-sectors">
-  <div style="background:var(--navy);padding:calc(72px + 56px) 8% 56px">
-    <span class="section-tag" style="color:var(--green)">Who We Serve</span>
-    <h1 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;margin-bottom:14px">Sectors We Serve</h1>
-    <p style="color:rgba(255,255,255,.7);font-size:1rem;max-width:560px;line-height:1.7">From government procurement to classroom technology — we tailor our approach to your sector's specific requirements, compliance needs, and budget cycles.</p>
-  </div>
-
-  <section class="section-wrap">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px">
-
-      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)">
-        <img src="https://images.unsplash.com/photo-1541726260-e6b6a6a4b929?w=600&q=75" alt="Government" style="width:100%;height:180px;object-fit:cover">
-        <div style="padding:28px">
-          <span style="font-size:24px">🏛️</span>
-          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin:12px 0 8px">Government & Municipalities</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:16px">SCM-compliant supply across local and district municipalities. We understand three-quote processes, RFQ requirements, and the importance of CSD registration. Experienced with WSLM, JGDM, and related entities.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px">
-            <span class="svc-tag">CSD Registered</span><span class="svc-tag">SCM Compliant</span><span class="svc-tag">B-BBEE Level 1</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)">
-        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=75" alt="Schools" style="width:100%;height:180px;object-fit:cover">
-        <div style="padding:28px">
-          <span style="font-size:24px">🏫</span>
-          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin:12px 0 8px">Schools & Education Departments</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:16px">Public and independent schools, circuits, and education departments sourcing Coding & Robotics kits, computers, and training. CAPS-aligned, Quintile 4/5 and independent school experience. DBE procurement pathway support.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px">
-            <span class="svc-tag">CAPS Aligned</span><span class="svc-tag">Gr R–12</span><span class="svc-tag">DBE Compliant</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)">
-        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=75" alt="Corporate" style="width:100%;height:180px;object-fit:cover">
-        <div style="padding:28px">
-          <span style="font-size:24px">🏢</span>
-          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin:12px 0 8px">SMMEs & Corporate Clients</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:16px">Growing businesses seeking ICT infrastructure, cybersecurity, and branded solutions. We've supplied Rand Refinery and various Eastern Cape enterprises with branded collateral and technology solutions on time and within budget.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px">
-            <span class="svc-tag">ICT Supply</span><span class="svc-tag">Cybersecurity</span><span class="svc-tag">Branding</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)">
-        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=75" alt="NGOs" style="width:100%;height:180px;object-fit:cover">
-        <div style="padding:28px">
-          <span style="font-size:24px">🤲</span>
-          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin:12px 0 8px">NGOs & Section 21 Companies</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:16px">Non-profit organisations receive the same quality and professionalism as our corporate clients. We understand budget constraints and offer competitive pricing while maintaining full B-BBEE documentation for your reporting requirements.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px">
-            <span class="svc-tag">Competitive Pricing</span><span class="svc-tag">B-BBEE Docs</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)">
-        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=75" alt="Healthcare" style="width:100%;height:180px;object-fit:cover">
-        <div style="padding:28px">
-          <span style="font-size:24px">🏥</span>
-          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin:12px 0 8px">Healthcare & Public Services</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:16px">Clinics, hospitals, and public service departments upgrading digital infrastructure, staff ICT capabilities, and POPIA compliance posture. We supply secure endpoint solutions and provide staff digital literacy training.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px">
-            <span class="svc-tag">POPIA Compliance</span><span class="svc-tag">ICT Training</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)">
-        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=75" alt="Training" style="width:100%;height:180px;object-fit:cover">
-        <div style="padding:28px">
-          <span style="font-size:24px">📖</span>
-          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin:12px 0 8px">Training & Skills Providers</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:16px">Partner institutions and SETA-funded providers can leverage our certification body partnerships (ISACA, CompTIA, PECB, ISC²) and curriculum expertise for blended learning programme design and delivery.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px">
-            <span class="svc-tag">SETA Ready</span><span class="svc-tag">Certification</span><span class="svc-tag">CPD Points</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="cta-band">
-    <div>
-      <h2>Your Sector. Your Solution.</h2>
-      <p>Tell us about your organisation and what you need. We'll provide a tailored proposal within one business day.</p>
-    </div>
-    <div class="cta-band-btns">
-      <button class="btn-white" onclick="showPage('contact')">Start the Conversation →</button>
-    </div>
-  </div>
-</div><!-- /page-sectors -->
-
-<!-- ═══════════════════════════════ PAGE: CONTACT ═══════════════════════════════ -->
-<div class="page" id="page-contact">
-  <div style="background:var(--navy);padding:calc(72px + 56px) 8% 56px">
-    <span class="section-tag" style="color:var(--green)">Contact Us</span>
-    <h1 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;margin-bottom:14px">Get in Touch</h1>
-    <p style="color:rgba(255,255,255,.7);font-size:1rem;max-width:560px;line-height:1.7">We respond to all enquiries within one business day. Formal quotations issued on request — compliant with SCM requirements.</p>
-  </div>
-
-  <section class="section-wrap">
-    <div class="contact-layout">
-      <div class="contact-info">
-        <span class="section-tag">Our Details</span>
-        <h2 class="section-title">Reach Ivy Africa</h2>
-        <p class="section-sub">Whether you're procuring hardware, need a training proposal, or want to discuss a partnership — we'd love to hear from you.</p>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📍</div>
-          <div>
-            <h5>Head Office</h5>
-            <p>Aliwal North, Joe Gqabi District<br>Eastern Cape, 9750<br>South Africa</p>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📧</div>
-          <div>
-            <h5>Email</h5>
-            <p>info@ivyafrica.co.za<br>david@ivyafrica.co.za</p>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">🏢</div>
-          <div>
-            <h5>Company Registration</h5>
-            <p>Ivy Africa (Pty) Ltd<br>Reg: 2016/041769/07<br>CSD: MAAA0862915</p>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">🏦</div>
-          <div>
-            <h5>Banking</h5>
-            <p>Capitec Business Account<br>Bank details on formal quotation</p>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">🕐</div>
-          <div>
-            <h5>Office Hours</h5>
-            <p>Monday – Friday: 08:00 – 17:00<br>Saturday: 09:00 – 13:00</p>
-          </div>
-        </div>
-        <div style="margin-top:28px">
-          <span class="bbee-strip">B-BBEE Level 1 · 100% Black-Owned · CSD Registered</span>
-        </div>
-      </div>
-
-      <div class="contact-form-box">
-        <h3>Send Us a Message</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" id="cf-fname" placeholder="First name">
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" id="cf-lname" placeholder="Last name">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Organisation / Institution</label>
-          <input type="text" id="cf-org" placeholder="Company, school, or municipality name">
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" id="cf-email" placeholder="your@email.com">
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" id="cf-phone" placeholder="071 000 0000">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Service of Interest</label>
-          <select id="cf-service">
-            <option value="">Select a service…</option>
-            <option>ICT Hardware & Infrastructure</option>
-            <option>Education Technology (EdTech)</option>
-            <option>Professional Training & Certification</option>
-            <option>Cybersecurity Solutions</option>
-            <option>E-Commerce & Direct Supply</option>
-            <option>Branded Collateral</option>
-            <option>Government / Tender Procurement</option>
-            <option>Multiple Services / General Enquiry</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea id="cf-message" placeholder="Describe your requirements, timeline, and any specific products or services you need. The more detail you provide, the more accurate our quotation will be."></textarea>
-        </div>
-        <button class="form-submit-btn" onclick="submitContactForm()">
-          Send Message <span>→</span>
-        </button>
-        <p style="font-size:11px;color:var(--text-light);margin-top:12px;text-align:center;line-height:1.5">We respond within 1 business day. Formal RFQ responses include company letterhead, tax invoice details, and B-BBEE certificate.</p>
-      </div>
-    </div>
-  </section>
-</div><!-- /page-contact -->
-
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <span class="brand-tagline">"Changing Lives, Two Steps A Time"</span>
-      <p>Ivy Africa® is a 100% Black-owned ICT solutions, education technology, training, and branded collateral company, headquartered in Aliwal North, Eastern Cape, serving clients across South Africa.</p>
-      <div class="footer-dots">
-        <div class="footer-dot" style="background:#f5c518"></div>
-        <div class="footer-dot" style="background:#f47c20"></div>
-        <div class="footer-dot" style="background:#3b9edd"></div>
-        <div class="footer-dot" style="background:#3ab54a"></div>
-      </div>
-      <div class="bbee-strip" style="margin-top:16px">B-BBEE Level 1 · 100% Black-Owned</div>
-      <p class="footer-reg">Ivy Africa (Pty) Ltd · Reg: 2016/041769/07<br>CSD: MAAA0862915 · Aliwal North, Eastern Cape, 9750</p>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><button onclick="showServiceDetail('ict')">ICT Hardware & Infrastructure</button></li>
-        <li><button onclick="showServiceDetail('edtech')">Education Technology</button></li>
-        <li><button onclick="showServiceDetail('training')">Professional Training</button></li>
-        <li><button onclick="showServiceDetail('cyber')">Cybersecurity</button></li>
-        <li><button onclick="showServiceDetail('ecommerce')">E-Commerce & Supply</button></li>
-        <li><button onclick="showServiceDetail('branding')">Branded Collateral</button></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><button onclick="showPage('home')">Home</button></li>
-        <li><button onclick="showPage('about')">About Us</button></li>
-        <li><button onclick="showPage('sectors')">Sectors</button></li>
-        <li><button onclick="showPage('contact')">Contact Us</button></li>
-        <li><button onclick="showPage('contact')">Request a Quote</button></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Partners</h4>
-      <ul>
-        <li><a href="#">Dell · HP · Lenovo</a></li>
-        <li><a href="#">Sophos · Kaspersky</a></li>
-        <li><a href="#">Adobe · DocuSign</a></li>
-        <li><a href="#">ISACA · CompTIA</a></li>
-        <li><a href="#">PECB · ISC²</a></li>
-        <li><a href="#">Pinnacle · First Distribution</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2024 Ivy Africa (Pty) Ltd. All rights reserved. Changing Lives, Two Steps A Time®</p>
-    <p>Aliwal North · Joe Gqabi District · Eastern Cape · South Africa</p>
-  </div>
-</footer>
-
-<script>
-// ── PAGE ROUTING ──
-function showPage(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
-  document.getElementById('mobileMenu').classList.remove('open');
-}
-
-function setActive(el) {
-  document.querySelectorAll('.nav-menu a, .nav-menu button').forEach(a => a.classList.remove('active'));
-  el.classList.add('active');
-}
-
-function toggleMobile() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-
-// ── SERVICE DETAIL DATA ──
-var svcData = {
-  ict: {
-    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80',
-    title: 'ICT Hardware & Infrastructure',
-    sub: 'Authorised supply, installation, and support of computers, servers, networking, and peripherals.',
-    content: `
-      <h2>End-to-End ICT Hardware Solutions</h2>
-      <p>Ivy Africa is an authorised reseller for South Africa's most trusted ICT brands — Dell, HP, Lenovo, Huawei, Acer, and Asus — through distributors Pinnacle and First Distribution. This means you receive genuine, warranty-backed products at competitive prices, with a fully B-BBEE Level 1 supplier certificate for your procurement records.</p>
-      <p>We serve government departments, municipalities, schools, SMMEs, and corporates — handling everything from single-device purchases to large-scale infrastructure rollouts.</p>
-      <h2 style="margin-top:32px">What We Supply</h2>
-      <ul>
-        <li>Desktop computers and all-in-ones (business and education grade)</li>
-        <li>Business laptops and notebooks (Dell Latitude, HP EliteBook, Lenovo ThinkPad)</li>
-        <li>Servers, NAS devices, and rack infrastructure</li>
-        <li>Networking: switches, routers, access points, firewalls</li>
-        <li>Projectors, interactive whiteboards, and display solutions</li>
-        <li>Printers, scanners, and MFD units</li>
-        <li>UPS and power protection devices</li>
-        <li>Peripherals: keyboards, mice, webcams, headsets, docking stations</li>
-      </ul>
-      <h2 style="margin-top:32px">Our Process</h2>
-      <ul>
-        <li>Needs assessment and specification consultation (free of charge)</li>
-        <li>Formal written quotation within 1 business day</li>
-        <li>SCM-compliant documentation (tax invoice, delivery note, B-BBEE certificate)</li>
-        <li>Delivery and on-site installation available</li>
-        <li>Post-delivery support and warranty management</li>
-      </ul>
-      <div style="margin-top:32px">
-        <button class="btn-green" onclick="showPage('contact')">Request an ICT Hardware Quote →</button>
-      </div>
-    `,
-    sidebar: '<h4>Authorised Brands</h4><ul><li>Dell</li><li>HP</li><li>Lenovo</li><li>Huawei</li><li>Acer</li><li>Asus</li><li>IBM</li></ul>'
-  },
-  edtech: {
-    img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80',
-    title: 'Education Technology',
-    sub: 'CAPS-aligned Coding & Robotics, LMS platforms, digital classrooms, and teacher training.',
-    content: `
-      <h2>Bringing 21st-Century Learning to South African Classrooms</h2>
-      <p>Ivy Africa is a specialist supplier of education technology for South African schools — from Coding & Robotics kits aligned to the CAPS curriculum, to Moodle LMS setup and teacher training programmes. We bridge the gap between hardware supply and genuine pedagogical impact.</p>
-      <p>We target Quintile 4, Quintile 5, and independent schools, as well as education departments procuring at circuit and district level. All our resources are DBE curriculum-aligned and appropriate for Grades R through 12.</p>
-      <h2 style="margin-top:32px">Education Technology Solutions</h2>
-      <ul>
-        <li>Coding & Robotics kits (Grades R–12, full CAPS alignment)</li>
-        <li>Shuter & Shooter Coding and Robotics textbook series supply</li>
-        <li>Moodle LMS installation, hosting, and teacher training</li>
-        <li>Computer laboratory setup (hardware + networking + software)</li>
-        <li>Smart classroom solutions (interactive boards + projectors)</li>
-        <li>STEM laboratory equipment and consumables</li>
-        <li>Teacher digital literacy short courses</li>
-        <li>School ICT policy and infrastructure consulting</li>
-      </ul>
-      <div style="margin-top:32px">
-        <button class="btn-green" onclick="showPage('contact')">Request an EdTech Quote →</button>
-      </div>
-    `,
-    sidebar: '<h4>Key Features</h4><ul><li>CAPS Curriculum Aligned</li><li>Grades R through 12</li><li>Moodle LMS Support</li><li>Teacher Training Included</li><li>DBE Procurement Ready</li></ul>'
-  },
-  training: {
-    img: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1200&q=80',
-    title: 'Professional Training & Certification',
-    sub: 'Globally accredited courses via ISACA, CompTIA, PECB, and ISC² — for individuals and organisations.',
-    content: `
-      <h2>Globally Recognised Certifications, Locally Delivered</h2>
-      <p>Ivy Africa holds partnership agreements with four of the world's most respected IT and governance certification bodies: ISACA, CompTIA, PECB, and ISC². This allows us to deliver accredited training programmes from Aliwal North and across South Africa — bringing world-class professional development to the Eastern Cape and beyond.</p>
-      <p>Whether you are an individual seeking a career-defining certification or an organisation investing in staff development, we offer flexible formats including on-site, blended, and virtual delivery.</p>
-      <h2 style="margin-top:32px">Certification Programmes Available</h2>
-      <ul>
-        <li>ISACA: CISA (Certified Information Systems Auditor), CISM, CRISC, CGEIT</li>
-        <li>CompTIA: A+, Network+, Security+, CySA+, PenTest+</li>
-        <li>PECB: ISO 27001 Lead Implementer/Auditor, ISO 9001, ISO 22301</li>
-        <li>ISC²: CISSP, SSCP, CCSP, CC (Certified in Cybersecurity)</li>
-        <li>Management Development: leadership, governance, project management</li>
-        <li>SETA-funded skills programmes (in development)</li>
-      </ul>
-      <div style="margin-top:32px">
-        <button class="btn-green" onclick="showPage('contact')">Enquire About Training →</button>
-      </div>
-    `,
-    sidebar: '<h4>Certification Bodies</h4><ul><li>ISACA</li><li>CompTIA</li><li>PECB</li><li>ISC²</li><li>CPD Points Included</li></ul>'
-  },
-  cyber: {
-    img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
-    title: 'Cybersecurity Solutions',
-    sub: 'Endpoint protection, POPIA compliance, vulnerability management, and security awareness training.',
-    content: `
-      <h2>Protecting South African Organisations in the Digital Age</h2>
-      <p>Cybersecurity is no longer optional — POPIA compliance requirements, ransomware threats, and data breach risks affect every South African organisation regardless of size. Ivy Africa provides practical, cost-effective cybersecurity solutions backed by authorised partnerships with Sophos and Kaspersky.</p>
-      <h2 style="margin-top:32px">Cybersecurity Services</h2>
-      <ul>
-        <li>Endpoint protection deployment and management (Sophos, Kaspersky)</li>
-        <li>Firewall setup and network security configuration</li>
-        <li>Vulnerability assessment and penetration testing coordination</li>
-        <li>POPIA (Protection of Personal Information Act) compliance consulting</li>
-        <li>Security awareness training for staff (anti-phishing, password hygiene)</li>
-        <li>Incident response planning and documentation</li>
-        <li>Email security and anti-spam solutions</li>
-        <li>Backup and disaster recovery strategy</li>
-      </ul>
-      <div style="margin-top:32px">
-        <button class="btn-green" onclick="showPage('contact')">Get a Security Assessment →</button>
-      </div>
-    `,
-    sidebar: '<h4>Authorised Partners</h4><ul><li>Sophos Enterprise</li><li>Kaspersky Business</li><li>IBM Security</li><li>POPIA Compliance</li></ul>'
-  },
-  ecommerce: {
-    img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80',
-    title: 'E-Commerce & Direct Supply',
-    sub: 'ICT accessories, WFH bundles, education materials — fast fulfilment via Makro, Takealot, and B2B direct.',
-    content: `
-      <h2>Fast, Reliable Supply Across Multiple Channels</h2>
-      <p>Ivy Africa operates active seller accounts on Makro Marketplace and Takealot, as well as direct B2B institutional supply channels. Our product catalogue spans ICT accessories, work-from-home productivity bundles, education kits, and load-shedding solutions.</p>
-      <h2 style="margin-top:32px">Product Categories</h2>
-      <ul>
-        <li>STEM & Robotics education kits (17+ products, Grades R–12)</li>
-        <li>ICT accessories from T2 Option Price List</li>
-        <li>Work-from-home bundles (webcam, headset, mouse, keyboard, hub)</li>
-        <li>Load-shedding productivity solutions (UPS, inverters, power banks)</li>
-        <li>Coding & Robotics textbooks (Shuter & Shooter series)</li>
-        <li>Business laptops and accessories</li>
-        <li>School stationery and supplies</li>
-      </ul>
-      <p>For institutional procurement (schools, government, NGOs), we issue formal quotations with full B-BBEE documentation, tax invoices, and delivery notes.</p>
-      <div style="margin-top:32px">
-        <button class="btn-green" onclick="showPage('contact')">Request a Product Quote →</button>
-      </div>
-    `,
-    sidebar: '<h4>Sales Channels</h4><ul><li>Makro Marketplace</li><li>Takealot Seller</li><li>Direct B2B Supply</li><li>Amazon SA (Coming Soon)</li></ul>'
-  },
-  branding: {
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
-    title: 'Branded Collateral',
-    sub: 'Professional corporate branding, uniforms, signage, and promotional materials — on time, every time.',
-    content: `
-      <h2>Professional Branding That Reflects Your Organisation</h2>
-      <p>Ivy Africa has supplied branded collateral to clients including Rand Refinery and municipal entities across the Eastern Cape. We understand corporate identity requirements, tender specifications for branded items, and the importance of quality, consistency, and deadline compliance.</p>
-      <h2 style="margin-top:32px">Branded Products & Services</h2>
-      <ul>
-        <li>Corporate uniforms and workwear (embroidered and printed)</li>
-        <li>Banners: roll-up, pull-up, teardrop, outdoor PVC</li>
-        <li>Signage: office, reception, exterior, vehicle branding</li>
-        <li>Branded stationery: letterheads, envelopes, folders, notepads</li>
-        <li>Promotional merchandise: pens, mugs, bags, caps, t-shirts</li>
-        <li>Event materials: tablecloths, gazebos, lanyards, name badges</li>
-        <li>Digital design services: logo design, brand guidelines</li>
-        <li>Annual report and document design and printing</li>
-      </ul>
-      <div style="margin-top:32px">
-        <button class="btn-green" onclick="showPage('contact')">Request a Branding Quote →</button>
-      </div>
-    `,
-    sidebar: '<h4>Product Range</h4><ul><li>Corporate Uniforms</li><li>Banners & Signage</li><li>Promotional Merchandise</li><li>Stationery & Print</li><li>Vehicle Branding</li></ul>'
-  }
-};
-
-function showServiceDetail(key) {
-  var d = svcData[key];
-  document.getElementById('svcDetailImg').src = d.img;
-  document.getElementById('svcDetailTitle').textContent = d.title;
-  document.getElementById('svcDetailSub').textContent = d.sub;
-  document.getElementById('svcDetailContent').innerHTML = d.content;
-  document.getElementById('svcDetailSidebar').innerHTML = d.sidebar;
-  showPage('service-detail');
-}
-
-// ── CONTACT FORM ──
-function submitContactForm() {
-  var fname = document.getElementById('cf-fname').value;
-  var email = document.getElementById('cf-email').value;
-  if (!fname || !email) { alert('Please fill in your name and email address.'); return; }
-  var btn = document.querySelector('.form-submit-btn');
-  btn.innerHTML = '✓ Message Sent — We\'ll respond within 1 business day';
-  btn.style.background = '#2a8a37';
-  btn.disabled = true;
-}
-
-// ── NAV LOGO FALLBACK ──
-window.addEventListener('load', function() {
-  var img = document.querySelector('.nav-logo img');
-  if (img && (img.naturalWidth === 0 || img.complete === false)) {
-    img.style.display = 'none';
-    img.nextElementSibling.style.display = 'flex';
-  }
-});
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
