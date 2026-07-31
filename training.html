@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training | Ivy Africa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style></style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Ivy<span>Africa</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="learning-supplies.html">Supplies</a></li>
+      <li><a href="smme.html">SMME</a></li>
+      <li><a href="consultancy.html">Consultancy</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+<section class="hero" style="min-height:45vh;">
+  <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&q=80" class="hero-bg-img" alt="Training classroom">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Training & <span class="highlight">Certification</span></h1>
+    <p>35+ accredited courses from CompTIA and PECB — delivered classroom, virtual, or on-site.</p>
+  </div>
+</section>
+
+<section>
+  <div style="display:flex;gap:0.75rem;justify-content:center;margin-bottom:2.5rem;flex-wrap:wrap;">
+    <button class="btn btn-primary" onclick="filterCourses('all')" id="btn-all" style="border-radius:100px;padding:0.625rem 1.5rem;">All Courses</button>
+    <button class="btn btn-outline-dark" onclick="filterCourses('CompTIA')" id="btn-CompTIA" style="border-radius:100px;padding:0.625rem 1.5rem;">CompTIA</button>
+    <button class="btn btn-outline-dark" onclick="filterCourses('PECB')" id="btn-PECB" style="border-radius:100px;padding:0.625rem 1.5rem;">PECB</button>
+    <button class="btn btn-outline-dark" onclick="filterCourses('Beginner')" id="btn-Beginner" style="border-radius:100px;padding:0.625rem 1.5rem;">Beginner</button>
+    <button class="btn btn-outline-dark" onclick="filterCourses('Intermediate')" id="btn-Intermediate" style="border-radius:100px;padding:0.625rem 1.5rem;">Intermediate</button>
+    <button class="btn btn-outline-dark" onclick="filterCourses('Advanced')" id="btn-Advanced" style="border-radius:100px;padding:0.625rem 1.5rem;">Advanced</button>
+  </div>
+  <div class="card-grid" id="course-grid">
+    <a href="comptia-techplus.html" class="card course-card" data-vendor="CompTIA" data-level="Beginner" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Beginner</span>
+        </div>
+        <h3>CompTIA Tech+</h3>
+        <p>Entry-level IT fundamentals covering hardware, software, networking, and security bas...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 3 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 8,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-aplus.html" class="card course-card" data-vendor="CompTIA" data-level="Beginner" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Beginner</span>
+        </div>
+        <h3>CompTIA A+</h3>
+        <p>The industry standard for establishing a career in IT. Covers PC hardware, networking...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 12,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-networkplus.html" class="card course-card" data-vendor="CompTIA" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>CompTIA Network+</h3>
+        <p>Validates essential knowledge and skills needed to confidently design, configure, man...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 13,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-securityplus.html" class="card course-card" data-vendor="CompTIA" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>CompTIA Security+</h3>
+        <p>Global certification validating baseline skills necessary to perform core security fu...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 14,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-cloudplus.html" class="card course-card" data-vendor="CompTIA" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>CompTIA Cloud+</h3>
+        <p>Validates skills needed to maintain and optimize cloud infrastructure services across...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 4 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 15,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-linuxplus.html" class="card course-card" data-vendor="CompTIA" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>CompTIA Linux+</h3>
+        <p>Covers skills required to configure, manage, and troubleshoot Linux systems in enterp...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 14,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-serverplus.html" class="card course-card" data-vendor="CompTIA" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>CompTIA Server+</h3>
+        <p>Validates skills to build, maintain, support, and troubleshoot server hardware and so...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 4 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 13,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-dataplus.html" class="card course-card" data-vendor="CompTIA" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>CompTIA Data+</h3>
+        <p>Covers data concepts, data mining, data analysis, visualization, and governance for d...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 4 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 15,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-projectplus.html" class="card course-card" data-vendor="CompTIA" data-level="Beginner" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Beginner</span>
+        </div>
+        <h3>CompTIA Project+</h3>
+        <p>Designed for business professionals who coordinate or manage small-to-medium-sized pr...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 3 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 11,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-cysaplus.html" class="card course-card" data-vendor="CompTIA" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>CompTIA CySA+</h3>
+        <p>Applies behavioral analytics to networks to improve overall security through identify...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 16,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-pentestplus.html" class="card course-card" data-vendor="CompTIA" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>CompTIA PenTest+</h3>
+        <p>Covers penetration testing and vulnerability management with hands-on, performance-ba...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 17,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-caspplus.html" class="card course-card" data-vendor="CompTIA" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>CompTIA CASP+</h3>
+        <p>Advanced-level certification for enterprise security professionals who design and imp...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 18,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-cloud-essentials.html" class="card course-card" data-vendor="CompTIA" data-level="Beginner" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Beginner</span>
+        </div>
+        <h3>CompTIA Cloud Essentials+</h3>
+        <p>Business-oriented certification covering cloud concepts, business principles, and man...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 2 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 7,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="comptia-securityx.html" class="card course-card" data-vendor="CompTIA" data-level="Expert" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-violet">CompTIA</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Expert</span>
+        </div>
+        <h3>CompTIA SecurityX</h3>
+        <p>Expert-level security certification for advanced practitioners designing enterprise s...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 19,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-27001-foundation.html" class="card course-card" data-vendor="PECB" data-level="Beginner" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Beginner</span>
+        </div>
+        <h3>ISO 27001 Foundation</h3>
+        <p>Understand the fundamental concepts and principles of information security management...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 2 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 9,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-27001-lead-implementer.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 27001 Lead Implementer</h3>
+        <p>Develop expertise to implement an ISMS based on ISO/IEC 27001 in an organization....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 18,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-27001-lead-auditor.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 27001 Lead Auditor</h3>
+        <p>Master the audit of Information Security Management Systems according to ISO 27001....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 19,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-27002-lead-manager.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 27002 Lead Manager</h3>
+        <p>Develop competencies for implementing and managing information security controls base...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 17,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-27701-lead-implementer.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 27701 Lead Implementer</h3>
+        <p>Privacy Information Management System implementation based on ISO 27701....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 19,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="pecb-cybersecurity-manager.html" class="card course-card" data-vendor="PECB" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>Cybersecurity Manager</h3>
+        <p>Develop expertise to manage cybersecurity programs aligned with business objectives....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 16,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="pecb-cloud-security-analyst.html" class="card course-card" data-vendor="PECB" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>Cloud Security Analyst</h3>
+        <p>Learn to analyse and manage security risks in cloud computing environments....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 4 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 14,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="cleh.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>CLEH — Certified Lead Ethical Hacker</h3>
+        <p>Master ethical hacking methodologies and penetration testing techniques....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 18,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="ccta.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>CCTA — Certified Cyber Threat Analyst</h3>
+        <p>Develop skills to identify, analyse, and respond to cyber threats....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 17,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-22301-lead-implementer.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 22301 Lead Implementer</h3>
+        <p>Business Continuity Management System implementation based on ISO 22301....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 17,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-9001-lead-implementer.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 9001 Lead Implementer</h3>
+        <p>Quality Management System implementation expertise based on ISO 9001....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 16,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-14001-lead-implementer.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 14001 Lead Implementer</h3>
+        <p>Environmental Management System implementation based on ISO 14001....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 16,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-45001-lead-implementer.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 45001 Lead Implementer</h3>
+        <p>Occupational Health & Safety Management System implementation based on ISO 45001....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 16,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-20000-lead-implementer.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 20000 Lead Implementer</h3>
+        <p>IT Service Management System implementation based on ISO 20000....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 17,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-31000-risk-manager.html" class="card course-card" data-vendor="PECB" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>ISO 31000 Risk Manager</h3>
+        <p>Risk management principles and guidelines based on ISO 31000....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 3 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 12,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-50001-lead-implementer.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 50001 Lead Implementer</h3>
+        <p>Energy Management System implementation based on ISO 50001....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 16,000</span>
+        </div>
+      </div>
+    </a>
+    <a href="gdpr-foundation.html" class="card course-card" data-vendor="PECB" data-level="Beginner" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Beginner</span>
+        </div>
+        <h3>GDPR Foundation</h3>
+        <p>Understand the fundamental principles and requirements of the EU GDPR....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 2 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 8,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="cdpo.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>CDPO — Certified Data Protection Officer</h3>
+        <p>Develop expertise to implement and manage data protection compliance programs....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 17,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="iso-42001-ai.html" class="card course-card" data-vendor="PECB" data-level="Advanced" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Advanced</span>
+        </div>
+        <h3>ISO 42001 AI Management</h3>
+        <p>AI Management System implementation based on ISO 42001....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 19,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="caip.html" class="card course-card" data-vendor="PECB" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>CAIP — Certified AI Practitioner</h3>
+        <p>Practical AI implementation skills for business professionals....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 16,500</span>
+        </div>
+      </div>
+    </a>
+    <a href="six-sigma-green-belt.html" class="card course-card" data-vendor="PECB" data-level="Intermediate" style="text-decoration:none;">
+      <div class="card-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span class="card-tag card-tag-green">PECB</span>
+          <span style="font-size:0.75rem;padding:0.25rem 0.75rem;border-radius:100px;background:rgba(5,150,105,0.08);color:var(--accent-green);font-weight:600;">Intermediate</span>
+        </div>
+        <h3>Six Sigma Green Belt</h3>
+        <p>Process improvement methodology using Six Sigma DMAIC framework....</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span style="color:var(--text-light);font-size:0.8rem;font-weight:500;">⏱ 5 days</span>
+          <span style="color:var(--accent-gold);font-weight:700;font-size:0.95rem;">R 14,000</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section style="background:var(--bg-panel);border-radius:2rem;margin:0 1.5rem;max-width:calc(1280px - 3rem);">
+  <h2 class="section-title" style="padding-top:3rem;">Training Bundles</h2>
+  <p class="section-subtitle">Save up to 25% with our curated course bundles.</p>
+  <div class="card-grid" style="padding:0 2rem 3rem;">
+    <div class="card" style="cursor:default;"><div class="card-body"><span class="card-tag card-tag-violet">Bundle</span><h3>🔒 Security Specialist Bundle</h3><p>Security+ → CySA+ → PenTest+ → CASP+. Complete security career path.</p><p style="color:var(--accent-gold);font-weight:700;margin-top:0.75rem;font-size:1.1rem;">Save 25% — R 52,500</p></div></div>
+    <div class="card" style="cursor:default;"><div class="card-body"><span class="card-tag card-tag-green">Bundle</span><h3>☁️ Cloud Professional Bundle</h3><p>Cloud Essentials+ → Cloud+ → Server+ → Linux+. Master cloud infrastructure.</p><p style="color:var(--accent-gold);font-weight:700;margin-top:0.75rem;font-size:1.1rem;">Save 20% — R 45,000</p></div></div>
+    <div class="card" style="cursor:default;"><div class="card-body"><span class="card-tag card-tag-gold">Bundle</span><h3>📋 ISO Lead Implementer Bundle</h3><p>ISO 27001 → ISO 9001 → ISO 22301. Triple certification for compliance professionals.</p><p style="color:var(--accent-gold);font-weight:700;margin-top:0.75rem;font-size:1.1rem;">Save 22% — R 42,500</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div style="max-width:800px;margin:0 auto;">
+    <div class="accordion-item"><div class="accordion-header">What delivery formats are available? <span class="accordion-icon">▼</span></div><div class="accordion-body">We offer classroom training at our Aliwal North centre, live virtual instructor-led sessions, and on-site corporate training at your premises across South Africa, Botswana, Namibia, Zambia, and Nigeria.</div></div>
+    <div class="accordion-item"><div class="accordion-header">Do you offer payment plans? <span class="accordion-icon">▼</span></div><div class="accordion-body">Yes. Individual learners can pay in up to 3 monthly instalments. Corporate clients can arrange 30-day invoice terms or structured payment plans for bulk bookings.</div></div>
+    <div class="accordion-item"><div class="accordion-header">Are exam vouchers included? <span class="accordion-icon">▼</span></div><div class="accordion-body">Exam vouchers are quoted separately and can be bundled with your course booking. We are an authorised testing centre for both CompTIA and PECB examinations.</div></div>
+    <div class="accordion-item"><div class="accordion-header">Can you train my entire team? <span class="accordion-icon">▼</span></div><div class="accordion-body">Absolutely. We offer corporate group discounts starting at 5 delegates, with custom scheduling and on-site delivery. Contact us for a tailored quote.</div></div>
+  </div>
+</section>
+
+<script>
+function filterCourses(filter) {
+  document.querySelectorAll('.course-card').forEach(card => {
+    card.style.display = (filter === 'all' || card.dataset.vendor === filter || card.dataset.level === filter) ? 'block' : 'none';
+  });
+  document.querySelectorAll('[id^="btn-"]').forEach(btn => {
+    btn.classList.remove('btn-primary'); btn.classList.add('btn-outline-dark');
+  });
+  const active = document.getElementById('btn-' + filter);
+  active.classList.remove('btn-outline-dark'); active.classList.add('btn-primary');
+}
+</script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Ivy Africa</h4>
+      <p>Empowering African enterprises through world-class technology, training, and consultancy.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Divisions</h4>
+      <a href="training.html">Training & Certification</a>
+      <a href="technology.html">Technology Solutions</a>
+      <a href="learning-supplies.html">Learning Supplies</a>
+      <a href="smme.html">SMME Support</a>
+      <a href="consultancy.html">Consultancy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:0518800404">051 880 0404</a>
+      <a href="mailto:info@ivyafrica.co.za">info@ivyafrica.co.za</a>
+      <span style="color:#9ca3af;font-size:0.875rem;">Aliwal North, Eastern Cape</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Ivy Africa (Pty) Ltd. Reg: 2016/041769/07. All rights reserved.</p>
+  </div>
+</footer>
+<a href="contact.html" class="floating-cta">Get a Free Quote</a>
+<script>
+document.querySelectorAll('.accordion-header').forEach(h=>{
+  h.addEventListener('click',()=>{ h.parentElement.classList.toggle('open'); });
+});
+</script>
+</body>
+</html>

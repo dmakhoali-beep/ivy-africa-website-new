@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CompTIA Server+ | Ivy Africa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style></style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Ivy<span>Africa</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="learning-supplies.html">Supplies</a></li>
+      <li><a href="smme.html">SMME</a></li>
+      <li><a href="consultancy.html">Consultancy</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+<section class="hero" style="min-height:50vh;">
+  <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&q=80" class="hero-bg-img" alt="CompTIA Server+">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-gold);display:inline-block;padding:0.35rem 1rem;background:rgba(255,255,255,0.15);border-radius:100px;margin-bottom:1rem;">CompTIA</span>
+    <h1 style="margin-top:0;">CompTIA Server+</h1>
+    <p>Validates skills to build, maintain, support, and troubleshoot server hardware and software.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
+      <span style="padding:0.5rem 1rem;background:rgba(255,255,255,0.12);border-radius:100px;font-size:0.8rem;font-weight:500;">⏱ 4 days</span>
+      <span style="padding:0.5rem 1rem;background:rgba(255,255,255,0.12);border-radius:100px;font-size:0.8rem;font-weight:500;">📊 Intermediate</span>
+      <span style="padding:0.5rem 1rem;background:rgba(255,255,255,0.12);border-radius:100px;font-size:0.8rem;font-weight:500;">🎓 Accredited</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:start;">
+    <div>
+      <span class="badge card-tag-violet" style="margin-bottom:1rem;">Overview</span>
+      <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em;">Course Overview</h2>
+      <p style="color:var(--text-muted);margin-bottom:1.5rem;line-height:1.7;">Validates skills to build, maintain, support, and troubleshoot server hardware and software.</p>
+
+      <h2 style="font-size:1.5rem;font-weight:800;margin:2rem 0 1rem;letter-spacing:-0.02em;">Course Outline</h2>
+      <div class="accordion-item open">
+        <div class="accordion-header">Module 1: Foundations <span class="accordion-icon">▼</span></div>
+        <div class="accordion-body">Core concepts, terminology, and fundamental principles required before advancing to practical application.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Module 2: Core Concepts <span class="accordion-icon">▼</span></div>
+        <div class="accordion-body">In-depth exploration of the subject matter with real-world examples and case studies from African enterprises.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Module 3: Practical Application <span class="accordion-icon">▼</span></div>
+        <div class="accordion-body">Hands-on labs, simulations, and exercises designed to build competency in a controlled environment.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Module 4: Advanced Topics <span class="accordion-icon">▼</span></div>
+        <div class="accordion-body">Enterprise-level scenarios, integration with existing systems, and preparation for certification examination.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Module 5: Exam Preparation <span class="accordion-icon">▼</span></div>
+        <div class="accordion-body">Practice questions, mock examinations, study strategies, and final review sessions with certified instructors.</div>
+      </div>
+
+      <h2 style="font-size:1.5rem;font-weight:800;margin:2.5rem 0 1rem;letter-spacing:-0.02em;">What You Will Learn</h2>
+      <ul style="color:var(--text-muted);padding-left:1.5rem;line-height:2.2;">
+        <li>Master the core principles and frameworks covered in the certification</li>
+        <li>Apply theoretical knowledge to real-world African business scenarios</li>
+        <li>Prepare thoroughly for the official vendor examination</li>
+        <li>Network with peers and build professional relationships</li>
+        <li>Receive a certificate of attendance from Ivy Africa</li>
+      </ul>
+    </div>
+
+    <div style="position:sticky;top:100px;align-self:start;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;margin-bottom:1.5rem;box-shadow:var(--shadow);">
+        <h3 style="margin-bottom:1rem;font-size:1.05rem;font-weight:700;">Course Fee</h3>
+        <div class="currency-switcher"><button class="currency-btn active" onclick="switchCurrency('ZAR',this)">ZAR</button><button class="currency-btn " onclick="switchCurrency('USD',this)">USD</button><button class="currency-btn " onclick="switchCurrency('GBP',this)">GBP</button><button class="currency-btn " onclick="switchCurrency('EUR',this)">EUR</button><button class="currency-btn " onclick="switchCurrency('NGN',this)">NGN</button></div>
+        <div class="price-display" data-currency="ZAR" style="display:block;font-size:2rem;font-weight:800;color:var(--accent-violet);">R 13,000</div><div class="price-display" data-currency="USD" style="display:none;font-size:2rem;font-weight:800;color:var(--accent-violet);">$ 715</div><div class="price-display" data-currency="GBP" style="display:none;font-size:2rem;font-weight:800;color:var(--accent-violet);">£ 565</div><div class="price-display" data-currency="EUR" style="display:none;font-size:2rem;font-weight:800;color:var(--accent-violet);">€ 665</div><div class="price-display" data-currency="NGN" style="display:none;font-size:2rem;font-weight:800;color:var(--accent-violet);">₦ 1,095,000</div>
+        <p style="color:var(--text-light);font-size:0.8rem;margin-top:0.5rem;">per delegate, excluding exam voucher</p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.5rem;">
+          <a href="contact.html" class="btn btn-primary" style="width:100%;">Enrol Now</a>
+          <a href="contact.html" class="btn btn-outline-dark" style="width:100%;">Request Quote</a>
+          <a href="contact.html" class="btn btn-outline-dark" style="width:100%;">Download Brochure</a>
+          <a href="contact.html" class="btn btn-outline-dark" style="width:100%;">Speak to Advisor</a>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;box-shadow:var(--shadow);">
+        <h3 style="margin-bottom:1rem;font-size:1.05rem;font-weight:700;">Course Details</h3>
+        <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.85rem;">Duration</span><span style="font-weight:600;font-size:0.9rem;">4 days</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.85rem;">Level</span><span style="font-weight:600;font-size:0.9rem;">Intermediate</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.85rem;">Delivery</span><span style="font-weight:600;font-size:0.9rem;">Classroom / Virtual</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.85rem;">Vendor</span><span style="font-weight:600;font-size:0.9rem;">CompTIA</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.6rem 0;"><span style="color:var(--text-muted);font-size:0.85rem;">Certificate</span><span style="font-weight:600;font-size:0.9rem;">Yes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Related Courses</h2>
+  <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+    <a href="comptia-techplus.html" class="card" style="text-decoration:none;">
+      <div class="card-body">
+        <span class="card-tag card-tag-violet">CompTIA</span>
+        <h4 style="margin:0.5rem 0;font-size:1rem;">CompTIA Tech+</h4>
+        <p style="font-size:0.8rem;color:var(--text-muted);">Entry-level IT fundamentals covering hardware, software...</p>
+        <span style="color:var(--accent-gold);font-weight:700;font-size:0.9rem;">R 8,500</span>
+      </div>
+    </a><a href="comptia-aplus.html" class="card" style="text-decoration:none;">
+      <div class="card-body">
+        <span class="card-tag card-tag-violet">CompTIA</span>
+        <h4 style="margin:0.5rem 0;font-size:1rem;">CompTIA A+</h4>
+        <p style="font-size:0.8rem;color:var(--text-muted);">The industry standard for establishing a career in IT. ...</p>
+        <span style="color:var(--accent-gold);font-weight:700;font-size:0.9rem;">R 12,500</span>
+      </div>
+    </a><a href="comptia-networkplus.html" class="card" style="text-decoration:none;">
+      <div class="card-body">
+        <span class="card-tag card-tag-violet">CompTIA</span>
+        <h4 style="margin:0.5rem 0;font-size:1rem;">CompTIA Network+</h4>
+        <p style="font-size:0.8rem;color:var(--text-muted);">Validates essential knowledge and skills needed to conf...</p>
+        <span style="color:var(--accent-gold);font-weight:700;font-size:0.9rem;">R 13,500</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<script>
+function switchCurrency(curr, btn) {
+  document.querySelectorAll('.price-display').forEach(p => p.style.display = 'none');
+  document.querySelectorAll('.price-display[data-currency="' + curr + '"]').forEach(p => p.style.display = 'block');
+  document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Ivy Africa</h4>
+      <p>Empowering African enterprises through world-class technology, training, and consultancy.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Divisions</h4>
+      <a href="training.html">Training & Certification</a>
+      <a href="technology.html">Technology Solutions</a>
+      <a href="learning-supplies.html">Learning Supplies</a>
+      <a href="smme.html">SMME Support</a>
+      <a href="consultancy.html">Consultancy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:0518800404">051 880 0404</a>
+      <a href="mailto:info@ivyafrica.co.za">info@ivyafrica.co.za</a>
+      <span style="color:#9ca3af;font-size:0.875rem;">Aliwal North, Eastern Cape</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Ivy Africa (Pty) Ltd. Reg: 2016/041769/07. All rights reserved.</p>
+  </div>
+</footer>
+<a href="contact.html" class="floating-cta">Get a Free Quote</a>
+<script>
+document.querySelectorAll('.accordion-header').forEach(h=>{
+  h.addEventListener('click',()=>{ h.parentElement.classList.toggle('open'); });
+});
+</script>
+</body>
+</html>
