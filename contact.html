@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Ivy Africa</title>
+<link rel="stylesheet" href="shared.css">
+<style></style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Ivy<span>Africa</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="learning-supplies.html">Supplies</a></li>
+      <li><a href="smme.html">SMME</a></li>
+      <li><a href="consultancy.html">Consultancy</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+<section class="hero" style="min-height:40vh;">
+<video autoplay muted loop playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-network-connections-27611-large.mp4" type="video/mp4"></video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+  <h1>Get in <span class="highlight">Touch</span></h1>
+  <p>Ready to transform your business? We'd love to hear from you.</p>
+</div>
+</section>
+
+<section>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
+    <div>
+      <h2 style="font-size:1.75rem;font-weight:800;margin-bottom:1.5rem;">Contact Information</h2>
+      <div class="card" style="margin-bottom:1rem;"><h3>📞 Phone</h3><p><a href="tel:0518800404" style="color:var(--accent-violet);">051 880 0404</a></p></div>
+      <div class="card" style="margin-bottom:1rem;"><h3>✉️ Email</h3><p><a href="mailto:info@ivyafrica.co.za" style="color:var(--accent-violet);">info@ivyafrica.co.za</a></p></div>
+      <div class="card" style="margin-bottom:1rem;"><h3>📍 Address</h3><p>Ivy Africa (Pty) Ltd<br>Aliwal North<br>Eastern Cape<br>South Africa</p></div>
+      <div class="card"><h3>📋 Registration</h3><p>Reg: 2016/041769/07<br>Founded: 2016</p></div>
+    </div>
+    <div>
+      <h2 style="font-size:1.75rem;font-weight:800;margin-bottom:1.5rem;">Send an Enquiry</h2>
+      <form style="background:var(--bg-card);padding:2rem;border-radius:1rem;border:1px solid var(--border);" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+        <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name" required></div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com" required></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+27 ..."></div>
+        <div class="form-group">
+          <label>Enquiry Type</label>
+          <select required>
+            <option value="">Select...</option>
+            <option>Training & Certification</option>
+            <option>Technology Solutions</option>
+            <option>Learning Supplies</option>
+            <option>SMME Support</option>
+            <option>Consultancy</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea rows="4" placeholder="How can we help?"></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Ivy Africa</h4>
+      <p style="color:var(--text-muted);font-size:0.875rem;">Empowering African enterprises through world-class technology, training, and consultancy.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Divisions</h4>
+      <a href="training.html">Training & Certification</a>
+      <a href="technology.html">Technology Solutions</a>
+      <a href="learning-supplies.html">Learning Supplies</a>
+      <a href="smme.html">SMME Support</a>
+      <a href="consultancy.html">Consultancy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:0518800404">051 880 0404</a>
+      <a href="mailto:info@ivyafrica.co.za">info@ivyafrica.co.za</a>
+      <span style="color:var(--text-muted);font-size:0.875rem;">Aliwal North, Eastern Cape</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Ivy Africa (Pty) Ltd. Reg: 2016/041769/07. All rights reserved.</p>
+  </div>
+</footer>
+<a href="contact.html" class="floating-cta">Get a Free Quote</a>
+<script>
+document.querySelectorAll('.accordion-header').forEach(h=>{
+  h.addEventListener('click',()=>{ h.parentElement.classList.toggle('open'); });
+});
+</script>
+</body>
+</html>
